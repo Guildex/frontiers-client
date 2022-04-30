@@ -1,10 +1,13 @@
-import styled from "styled-components";
-import { COLORS, FONT_SIZES } from "~/consts/style";
-import { FONT_FAMILY } from "~/consts/style/fontFamily";
+import styled from 'styled-components';
+import { COLORS, FONT_SIZES } from '~/consts/style';
 
 export const Header = styled.header`
   position: sticky;
+  top: 0;
   padding: 20px;
+  background-color: rgba(${COLORS.GRAY100.rgb}, 0.5);
+  backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: rgb(${COLORS.GRAY300.rgb}) 0 10px 20px -10px;
 `;
 
 export const Link = styled.a`
