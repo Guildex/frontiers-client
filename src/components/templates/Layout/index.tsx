@@ -1,5 +1,8 @@
-import type { ReactNode } from "react";
-import { Header } from "~/components/organisms/Header";
+import type { ReactNode } from 'react';
+import { Footer } from '~/components/organisms/Footer';
+import { Header } from '~/components/organisms/Header';
+import { Side } from '~/components/organisms/Side';
+import * as Styled from './style';
 
 export type LayoutProps = {
   /** 子要素 */
@@ -16,8 +19,11 @@ export const Layout = (props: LayoutProps) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
-      <footer></footer>
+      <Styled.Main>
+        <Side />
+        <Styled.Contents>{children}</Styled.Contents>
+      </Styled.Main>
+      <Footer />
     </>
   );
 };
