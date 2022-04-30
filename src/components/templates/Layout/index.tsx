@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Header } from "~/components/organisms/Header";
 
 export type LayoutProps = {
   /** 子要素 */
@@ -14,7 +15,7 @@ export const Layout = (props: LayoutProps) => {
 
   return (
     <>
-      <header></header>
+      <Header />
       <main>{children}</main>
       <footer></footer>
     </>

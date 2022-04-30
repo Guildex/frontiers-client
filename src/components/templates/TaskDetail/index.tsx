@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import * as Styled from "./style";
 import type { Curriculum } from "~/consts/curriculums";
 
@@ -16,11 +15,14 @@ export const TaskDetail = (props: DetailProps) => {
       <Styled.Title>{title}</Styled.Title>
       {description}
 
-      <Styled.RequirementList>
-        {requirements.map((requirement) => (
-          <li key={requirement}>{requirement}</li>
-        ))}
-      </Styled.RequirementList>
+      <Styled.RequirementListBox>
+        <h1>仕様</h1>
+        <ul>
+          {requirements.map((requirement) => (
+            <li key={requirement}>{requirement}</li>
+          ))}
+        </ul>
+      </Styled.RequirementListBox>
     </>
   );
 };
