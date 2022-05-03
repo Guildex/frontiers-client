@@ -372,32 +372,6 @@
     "@react-types/shared" "3.11.0"
     "@stitches/react" "1.2.7"
 
-"@nextui-org/react@^1.0.8-beta.5":
-  version "1.0.8-beta.5"
-  resolved "https://registry.yarnpkg.com/@nextui-org/react/-/react-1.0.8-beta.5.tgz#7168e6dd7ee8872c7e8f0078a8455c28cc25e6eb"
-  integrity sha512-rLM3PPuo0bNSp+WpawDUGRsa4FQTPuYwLEa6v9jSYzJMbSPr265LCOopn+h9o95CAFBJ48C1laSnnJ4SEEE0DQ==
-  dependencies:
-    "@babel/runtime" "7.9.6"
-    "@react-aria/button" "3.4.3"
-    "@react-aria/checkbox" "3.3.0"
-    "@react-aria/focus" "3.5.1"
-    "@react-aria/i18n" "3.3.6"
-    "@react-aria/interactions" "3.8.0"
-    "@react-aria/label" "3.2.2"
-    "@react-aria/ssr" "3.1.2"
-    "@react-aria/table" "3.2.1"
-    "@react-aria/utils" "3.11.1"
-    "@react-aria/visually-hidden" "3.2.4"
-    "@react-stately/checkbox" "3.0.6"
-    "@react-stately/data" "3.4.5"
-    "@react-stately/table" "3.1.1"
-    "@react-stately/toggle" "3.2.4"
-    "@react-types/button" "^3.4.4"
-    "@react-types/checkbox" "3.2.6"
-    "@react-types/grid" "3.0.1"
-    "@react-types/shared" "3.11.0"
-    "@stitches/react" "1.2.7"
-
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -454,17 +428,6 @@
     "@react-aria/utils" "^3.11.3"
     "@react-stately/overlays" "^3.1.6"
     "@react-types/dialog" "^3.3.4"
-
-"@react-aria/focus@3.5.1":
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/@react-aria/focus/-/focus-3.5.1.tgz#b3d0cd5877c844db7f6fb28ba3eec1516dc3b123"
-  integrity sha512-8TTlxekumLxFZo0GELVUDCv6olQTMlGtobeGNaf0MVoonGz5oukjjPa3DB+PZRxMduTotRlniqpejnZi4fzMDw==
-  dependencies:
-    "@babel/runtime" "^7.6.2"
-    "@react-aria/interactions" "^3.8.0"
-    "@react-aria/utils" "^3.11.1"
-    "@react-types/shared" "^3.11.0"
-    clsx "^1.1.1"
 
 "@react-aria/focus@3.5.4", "@react-aria/focus@^3.5.1", "@react-aria/focus@^3.5.4":
   version "3.5.4"
