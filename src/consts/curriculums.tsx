@@ -18,8 +18,8 @@ export const CURRICULUMS = {
     id: 'register-form',
     title: '登録フォームの実装',
     description: '',
-    requirements: [],
-    example: null,
+    requirements: ['デザイン通りに実装されていること（アニメーションを除く）'],
+    example: <Examples.ExampleRegisterForm />,
   },
   // CHECKBOX: {
   //   title: 'チェックボックス実装',

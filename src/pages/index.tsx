@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
-import { Form } from "~/components/Form";
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return <Form />;
+  return <>工事中</>;
 };
 
 export default Home;
