@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next React Workbook
 
-## Getting Started
+このリポジトリは React と Next.js と TypeScript を用いて Web アプリケーションを構築する上で重要なコンポーネント設計や、API とのやり取り、Store 設計などを実装とレビューを繰り返しながら体系的に学習するサービスです。
 
-First, run the development server:
+## 環境構築
 
-```bash
-npm run dev
-# or
-yarn dev
+### 必要パッケージのインストール
+
+```
+$ yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 拡張機能の追加（for VSCode）
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+`CMD + Shift + X` で拡張機能一覧を表示したのちに、入力フォームに `@recommended` と入力すると推奨拡張機能が表示されるので、必要であればインストールしてください（インストールをしなくてもカリキュラムは進行可能です）
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## スタイリングについて
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+当サービスでは [styled-components](https://styled-components.com/) を前提に作成しております。
+スタイリングをする際は下記のように `style.tsx` を作成して、必要なコンポーネントと当てたい CSS を明記してそれを `index.tsx` で利用するようにしてください。
 
-## Learn More
+```tsx
+// style.tsx
+import styled from 'styled-components';
 
-To learn more about Next.js, take a look at the following resources:
+export const Wrapper = styled.div`
+  margin: 20px;
+  padding: 20px;
+  background-color: #f00;
+`;
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```tsx
+// index.tsx
+import * as Styled from './style';
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+export const Hoge = () => {
+  return <Styled.Wrapper>hoge</Styled.Wrapper>;
+};
+```
