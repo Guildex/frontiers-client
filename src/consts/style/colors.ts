@@ -20,6 +20,9 @@ export const COLORS = {
     code: '#ededed',
     rgb: '237, 237, 237',
   },
+  GRAY400: {
+    code: '#cdcdcd',
+  },
   GRAY1000: {
     code: '#000',
   },
