@@ -1,6 +1,18 @@
 import styled, { css } from 'styled-components';
 import { COLORS, FONT_SIZES } from '~/consts/style';
 
+const baseStyle = css`
+  display: block;
+  padding: 12px 20px;
+  font-size: ${FONT_SIZES.S}px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: ${COLORS.GRAY200.code};
+  }
+`;
+
 export const List = styled.ul`
   margin: 0;
   padding: 0;
@@ -16,20 +28,20 @@ export const List = styled.ul`
 `;
 
 export const Link = styled.a<{ isActive: boolean }>`
-  display: block;
-  padding: 12px 20px;
+  ${baseStyle};
+
   color: ${COLORS.GRAY1000.code};
-  font-size: ${FONT_SIZES.S}px;
   text-decoration: none;
-  transition: background-color 0.3s;
-  border-radius: 20px;
 
   ${({ isActive }) => css`
     background-color: ${isActive ? COLORS.GRAY200.code : 'transparent'};
     font-weight: ${isActive ? 'bold' : 'normal'};
   `}
+`;
 
-  &:hover {
-    background-color: ${COLORS.GRAY200.code};
-  }
+export const UnpublishedLink = styled.div`
+  ${baseStyle};
+
+  color: ${COLORS.GRAY400.code};
+  cursor: pointer;
 `;

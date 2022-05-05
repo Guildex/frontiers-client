@@ -15,14 +15,21 @@ export const Nav = () => {
     <Styled.List>
       {(Object.keys(CURRICULUMS) as CurriculumKeys[]).map((key, idx) => {
         const path = `/curriculums/${CURRICULUMS[key].id}`;
+        const { id, title, isPublic } = CURRICULUMS[key];
 
         return (
-          <li key={CURRICULUMS[key].id}>
-            <NextLink href={path} passHref>
-              <Styled.Link isActive={router.asPath === path}>
-                Lesson{idx + 1}. {CURRICULUMS[key].title}
-              </Styled.Link>
-            </NextLink>
+          <li key={id}>
+            {isPublic ? (
+              <NextLink href={path} passHref>
+                <Styled.Link isActive={router.asPath === path}>
+                  Lesson{idx + 1}. {title}
+                </Styled.Link>
+              </NextLink>
+            ) : (
+              <Styled.UnpublishedLink>
+                Lesson{idx + 1}. {title}
+              </Styled.UnpublishedLink>
+            )}
           </li>
         );
       })}
