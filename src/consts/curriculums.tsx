@@ -14,10 +14,11 @@ export const CURRICULUMS = {
     ],
     example: <Examples.ExampleInput />,
   },
-  REGISTER_FORM: {
-    id: 'register-form',
-    title: '登録フォームの実装',
-    description: '',
+  REGISTER_FORM_UI: {
+    id: 'register-form-ui',
+    title: '登録フォームのUI実装',
+    description:
+      '会員登録やお問い合わせなど、ユーザーの操作によってサービス運営者等に向けて自らの情報を送る為のフォームです。',
     requirements: ['デザイン通りに実装されていること（アニメーションを除く）'],
     example: <Examples.ExampleRegisterForm />,
   },
