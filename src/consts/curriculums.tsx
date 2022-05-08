@@ -29,8 +29,12 @@ export const CURRICULUMS = {
     id: 'register-form-validation',
     title: '登録フォームのバリデーション実装',
     description:
-      '登録ボタン押下時に各項目が期待値通りでない場合、赤字で期待値を満たしていないことをユーザーに伝える機能の実装です。',
-    requirements: [''],
+      '登録ボタン押下時に各項目が期待値通りでない場合、赤字で期待値を満たしていないことをユーザーに伝える機能の実装です。\nHTMLInputElementには入力必須を指定するrequiredという属性を付与する方法もありますが、今回はそちらを使用せずに自身で実装したプログラムによって各項目が期待値を満たすかどうかをチェックする処理を実装していきましょう。',
+    requirements: [
+      'お名前（姓）が未記入の場合、「名字を入力してください」と赤字で表示されること',
+      '',
+      'お名前（名）が未記入の場合、「名前を入力してください」と赤字で表示されること',
+    ],
     example: <Examples.ExampleRegisterForm />,
   },
   REGISTER_FORM_SUBMIT: {
