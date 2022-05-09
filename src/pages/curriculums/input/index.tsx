@@ -1,12 +1,21 @@
 import type { NextPage } from 'next';
 import { TaskDetail } from '~/components/templates/TaskDetail';
 import { CURRICULUMS } from '~/consts/curriculums';
+import * as Styled from './style';
 
 const Input: NextPage = () => {
   return (
     <>
       <TaskDetail {...CURRICULUMS.INPUT}>
-        {/* 回答はこちらに実装してください */}
+        <form action="">
+          <Styled.FormEmailTitle>
+            メールアドレス
+          </Styled.FormEmailTitle>
+          <Styled.FormEmailInput
+            type="email"
+            placeholder='123abc@defg.com'
+          />
+        </form>
       </TaskDetail>
     </>
   );
