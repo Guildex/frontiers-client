@@ -218,10 +218,10 @@
   dependencies:
     "@nextui-org/react" "^1.0.0-beta.6"
 
-"@guildex/react-next-curriculum-example@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@guildex/react-next-curriculum-example/-/react-next-curriculum-example-0.2.6.tgz#6e8e0a85e69bc5b56cb5bd0a81a053f4b2e38d5b"
-  integrity sha512-/JoWMoMMRtHF1ACa3PBTnk+EdQ2CBo8hUMT8iy3P+xszzOJD+ZSPNt7sic0U1CfQoAOBJl0eAaz5CTLCopB7qg==
+"@guildex/react-next-curriculum-example@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@guildex/react-next-curriculum-example/-/react-next-curriculum-example-0.3.0.tgz#da3fe5c69eb9df04c3d7821c24ff28338d658b9d"
+  integrity sha512-yIc9HrQJCiRa5DkF4td7GvDukKFqox7u1CQZEGWFkkiDEmGU7+woLgBAjz1wdxJcZnOYS1urkQve3KBKiE/3mw==
   dependencies:
     "@guildex/react-next-curriculum-example" "^0.1.0"
     "@nextui-org/react" "^1.0.0-beta.6"

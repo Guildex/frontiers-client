@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@guildex/react-next-curriculum-example": "^0.2.6",
+    "@guildex/react-next-curriculum-example": "^0.3.0",
     "next": "12.1.5",
     "next-seo": "^5.4.0",
     "react": "18.0.0",
