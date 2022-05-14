@@ -8,6 +8,7 @@ export const Header = styled.header`
   background-color: rgba(${COLORS.GRAY100.rgb}, 0.5);
   backdrop-filter: saturate(180%) blur(10px);
   box-shadow: rgb(${COLORS.GRAY300.rgb}) 0 10px 20px -10px;
+  z-index: 10;
 `;
 
 export const Link = styled.a`
