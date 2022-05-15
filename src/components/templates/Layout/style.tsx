@@ -9,6 +9,6 @@ export const Contents = styled.div`
   width: 100%;
   max-width: 1000px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 0 40px;
   box-sizing: border-box;
 `;
