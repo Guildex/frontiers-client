@@ -218,10 +218,10 @@
   dependencies:
     "@nextui-org/react" "^1.0.0-beta.6"
 
-"@guildex/react-next-curriculum-example@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@guildex/react-next-curriculum-example/-/react-next-curriculum-example-0.2.6.tgz#6e8e0a85e69bc5b56cb5bd0a81a053f4b2e38d5b"
-  integrity sha512-/JoWMoMMRtHF1ACa3PBTnk+EdQ2CBo8hUMT8iy3P+xszzOJD+ZSPNt7sic0U1CfQoAOBJl0eAaz5CTLCopB7qg==
+"@guildex/react-next-curriculum-example@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@guildex/react-next-curriculum-example/-/react-next-curriculum-example-0.3.1.tgz#f1ae912ad62048a57a12228933bdd1f48cb4560a"
+  integrity sha512-ymOTz/ELbl7oGgxIJ6J4O2pBOWUvsbNqlQ9JQQk/DYmpOLP/d9/Ty5NzGTowrhoE80EYfLqo7iPjlD4Ys2f6Fw==
   dependencies:
     "@guildex/react-next-curriculum-example" "^0.1.0"
     "@nextui-org/react" "^1.0.0-beta.6"
@@ -2051,6 +2051,11 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
+
+next-seo@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-5.4.0.tgz#37a7784b30b3f70cec3fa0d77f9dde5990822d24"
+  integrity sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==
 
 next@12.1.5:
   version "12.1.5"
