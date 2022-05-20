@@ -12,6 +12,7 @@ export const CURRICULUMS = {
       'テキストが入力できること',
       'emailの形式のみ入力できること',
       'labelタグを用いていること',
+      '入力された値はReactのstateとして管理されていること',
     ],
     example: <Examples.ExampleInput />,
   },

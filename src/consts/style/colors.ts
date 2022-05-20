@@ -3,10 +3,13 @@ export const COLORS = {
     code: '#3c8eec',
   },
   GREEN50: {
-    code: '#f0fbe9',
+    code: '#edfbe2',
   },
   GREEN100: {
     code: '#b7dc9e',
+  },
+  GREEN1000: {
+    code: '#2c5611',
   },
   GRAY100: {
     code: '#fff',
@@ -29,4 +32,4 @@ export const COLORS = {
   REACT: {
     code: '#61dafb',
   },
-} as const
+} as const;

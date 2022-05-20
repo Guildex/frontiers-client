@@ -21,10 +21,17 @@ export const Annotation = styled.p`
 
 export const RequirementListBox = styled.div`
   margin-top: 20px;
-  padding: 20px;
+  padding: 12px 20px;
+  font-size: ${FONT_SIZES.S}px;
+  line-height: 1.8;
+  color: ${COLORS.GREEN1000.code};
   border-left: 8px solid ${COLORS.GREEN100.code};
   background-color: ${COLORS.GREEN50.code};
   border-radius: 12px;
+
+  ul {
+    margin-bottom: 0;
+  }
 
   h1 {
     margin-bottom: 12px;
