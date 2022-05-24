@@ -15,6 +15,18 @@ export const Title = styled.h1`
   font-size: ${FONT_SIZES.XL}px;
 `;
 
+export const Description = styled.div`
+  line-height: 1.6;
+
+  p {
+    margin-top: 12px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+`;
+
 export const Annotation = styled.p`
   margin-bottom: 20px;
 `;
