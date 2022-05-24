@@ -12,6 +12,12 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "prettier",
+      "eslint"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
