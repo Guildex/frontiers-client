@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalCSS = createGlobalStyle`
   html,
@@ -6,4 +6,4 @@ export const GlobalCSS = createGlobalStyle`
   #__next {
     height: 100vh;
   }
-`
+`;

@@ -3,4 +3,4 @@ export const ICON_SIZES = {
   M: 20,
   L: 24,
   XL: 32,
-} as const
+} as const;

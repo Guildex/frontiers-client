@@ -5,4 +5,4 @@ export const FONT_SIZES = {
   L: 20,
   XL: 24,
   XXL: 32,
-} as const
+} as const;

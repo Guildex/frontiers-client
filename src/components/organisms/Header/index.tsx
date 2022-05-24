@@ -1,9 +1,9 @@
-import NextLink from "next/link";
-import { GrReactjs } from "react-icons/gr";
+import NextLink from 'next/link';
+import { GrReactjs } from 'react-icons/gr';
 
-import { PATHS } from "~/consts/paths";
-import { COLORS } from "~/consts/style";
-import * as Styled from "./style";
+import { PATHS } from '~/consts/paths';
+import { COLORS } from '~/consts/style';
+import * as Styled from './style';
 
 /**
  * グローバルなヘッダー要素
