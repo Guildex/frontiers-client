@@ -9,7 +9,14 @@
     "lint": "run-p 'lint:*'",
     "lint:eslint": "eslint '**/*.{ts,tsx}'",
     "lint:prettier": "prettier --check '**/*.{ts,tsx}'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn build"
+    }
   },
   "dependencies": {
     "@guildex/react-next-curriculum-example": "^0.3.1",
