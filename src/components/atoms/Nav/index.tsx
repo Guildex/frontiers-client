@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 
 import { CURRICULUMS } from '~/consts/curriculums';
 import type { CurriculumKeys } from '~/consts/curriculums';
+
 import * as Styled from './style';
 
 /**

@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
+import { FaInfoCircle } from 'react-icons/fa';
+
+import type { Curriculum } from '~/consts/curriculums';
+import { ICON_SIZES } from '~/consts/style';
 
 import * as Styled from './style';
-import { FaInfoCircle } from 'react-icons/fa';
-import { ICON_SIZES } from '~/consts/style';
-import type { Curriculum } from '~/consts/curriculums';
 
 export type TaskDetailProps = Curriculum & {
   children: ReactNode;

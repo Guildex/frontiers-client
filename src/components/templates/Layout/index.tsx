@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
+
 import { Footer } from '~/components/organisms/Footer';
 import { Header } from '~/components/organisms/Header';
 import { Side } from '~/components/organisms/Side';
+
 import * as Styled from './style';
 
 export type LayoutProps = {

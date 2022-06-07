@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { COLORS, FONT_SIZES } from '~/consts/style';
 
 const baseStyle = css`

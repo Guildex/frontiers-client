@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { COLORS } from '~/consts/style';
 
 export const Aside = styled.aside`

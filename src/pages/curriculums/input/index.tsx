@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+
 import { Head } from '~/components/atoms/Head';
 import { TaskDetail } from '~/components/templates/TaskDetail';
 import { CURRICULUMS } from '~/consts/curriculums';

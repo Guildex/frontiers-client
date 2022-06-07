@@ -1,8 +1,10 @@
+import type { NextPage } from 'next';
+
 import { Head } from '~/components/atoms/Head';
 import { TaskDetail } from '~/components/templates/TaskDetail';
 import { CURRICULUMS } from '~/consts/curriculums';
 
-const RegisterFormValidation = () => {
+const RegisterFormValidation: NextPage = () => {
   const { title, description } = CURRICULUMS.REGISTER_FORM_VALIDATION;
 
   return (
