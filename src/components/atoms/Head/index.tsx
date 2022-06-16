@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 
 import {
+  BASE_URL,
   OPEN_GRAPH_IMAGE_HEIGHT,
   OPEN_GRAPH_IMAGE_WIDTH,
   SITE_NAME,
@@ -38,7 +39,7 @@ export const Head = (props: HeadProps) => {
         description: ogDescription,
         images: [
           {
-            url: `/api/generate-ogp?title=${title}`,
+            url: `${BASE_URL}api/generate-ogp?title=${title}`,
             width: OPEN_GRAPH_IMAGE_WIDTH,
             height: OPEN_GRAPH_IMAGE_HEIGHT,
           },
