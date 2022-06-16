@@ -1,5 +1,6 @@
 /**
  * For building on vercel
+ *
  * @see https://github.com/Automattic/node-canvas/issues/1779
  */
 if (
