@@ -18,4 +18,10 @@ const RegisterFormSubmit: NextPage = () => {
   );
 };
 
+export function getStaticProps() {
+  return {
+    props: {},
+  };
+}
+
 export default RegisterFormSubmit;

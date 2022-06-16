@@ -18,4 +18,10 @@ const RegisterFormValidation: NextPage = () => {
   );
 };
 
+export function getStaticProps() {
+  return {
+    props: {},
+  };
+}
+
 export default RegisterFormValidation;

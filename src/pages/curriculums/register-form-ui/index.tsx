@@ -18,4 +18,10 @@ const RegisterFormUI: NextPage = () => {
   );
 };
 
+export function getStaticProps() {
+  return {
+    props: {},
+  };
+}
+
 export default RegisterFormUI;

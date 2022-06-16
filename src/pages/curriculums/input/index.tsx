@@ -18,4 +18,10 @@ const Input: NextPage = () => {
   );
 };
 
+export function getStaticProps() {
+  return {
+    props: {},
+  };
+}
+
 export default Input;
