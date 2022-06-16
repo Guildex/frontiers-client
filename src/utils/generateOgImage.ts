@@ -2,10 +2,10 @@ import { createCanvas, loadImage, registerFont } from 'canvas';
 import fs from 'fs';
 import path from 'path';
 
+import { OPEN_GRAPH_IMAGE_WIDTH, OPEN_GRAPH_IMAGE_HEIGHT } from '~/consts/app';
+
 const rootDir = process.cwd();
 
-const WIDTH = 1200;
-const HEIGHT = 630;
 const MAX_WIDTH = 800;
 
 const getBase = (sum: number) => {
@@ -22,7 +22,7 @@ const getBase = (sum: number) => {
 
 const getH = (sum: number, current: number) => {
   const { rate, additionalHeight } = getBase(sum);
-  const base = (HEIGHT * rate) / 7;
+  const base = (OPEN_GRAPH_IMAGE_HEIGHT * rate) / 7;
 
   return base + additionalHeight * current;
 };
@@ -42,17 +42,17 @@ export const generateOgImage = async (title: string) => {
     family: 'NotoSansJP',
   });
 
-  const canvas = createCanvas(WIDTH, HEIGHT);
+  const canvas = createCanvas(OPEN_GRAPH_IMAGE_WIDTH, OPEN_GRAPH_IMAGE_HEIGHT);
   const ctx = canvas.getContext('2d');
   const src = path.resolve(rootDir, 'src/lib/canvas/assets/og-template.png');
   const image = await loadImage(fs.readFileSync(src));
 
-  ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+  ctx.drawImage(image, 0, 0, OPEN_GRAPH_IMAGE_WIDTH, OPEN_GRAPH_IMAGE_HEIGHT);
   ctx.font = '40px "NotoSansJP"';
   ctx.textAlign = 'center';
 
   const lines = title.replace(/\\n/g, '\n').split('\n');
-  const w = WIDTH / 2;
+  const w = OPEN_GRAPH_IMAGE_WIDTH / 2;
   const sum = lines.length;
   const write = (text: string, h: number) => {
     ctx.fillText(text, w, h, MAX_WIDTH);
