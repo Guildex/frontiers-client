@@ -51,7 +51,7 @@ export const generateOgImage = async (title: string) => {
   ctx.font = '40px "NotoSansJP"';
   ctx.textAlign = 'center';
 
-  const lines = title.replaceAll('\\n', '\n').split('\n');
+  const lines = title.replace(/\\n/g, '\n').split('\n');
   const w = WIDTH / 2;
   const sum = lines.length;
   const write = (text: string, h: number) => {
