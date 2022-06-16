@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 
 import { Layout } from '~/components/templates/Layout';
+import { SITE_NAME } from '~/consts/app';
 import { GlobalCSS } from '~/theme/GlobalCSS';
 import { ResetCSS } from '~/theme/ResetCSS';
 
@@ -15,7 +16,7 @@ const DynamicGoogleFontLoader = dynamic(() => import('~/theme/GoogleFont'), {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SSRProvider>
-      <NextSeo titleTemplate="%s | Next React Workbook" />
+      <NextSeo titleTemplate={`%s | ${SITE_NAME}`} />
       <ResetCSS />
       <GlobalCSS />
       <DynamicGoogleFontLoader />
