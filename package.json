@@ -11,7 +11,7 @@
     "lint:prettier": "prettier --check '**/*.{ts,tsx}'",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "now-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build"
+    "now-build": "sudo yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
@@ -25,13 +25,10 @@
       "pre-push": "yarn build"
     }
   },
-  "engines": {
-    "node": "14.19.x"
-  },
   "dependencies": {
     "@guildex/react-next-curriculum-example": "^0.4.0",
     "@react-aria/ssr": "^3.1.2",
-    "canvas": "2.6.1",
+    "canvas": "2.9.1",
     "next": "12.1.5",
     "next-seo": "^5.4.0",
     "react": "18.0.0",
