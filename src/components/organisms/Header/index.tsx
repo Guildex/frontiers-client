@@ -11,6 +11,13 @@ import * as Styled from './style';
  * グローバルなヘッダー要素
  */
 export const Header = () => {
+  const nav = [
+    {
+      href: '/curriculums/',
+      value: 'カリキュラム',
+    },
+  ];
+
   return (
     <Styled.Header>
       <NextLink href={PATHS.HOME} passHref>
@@ -19,6 +26,18 @@ export const Header = () => {
           <span>{SITE_NAME}</span>
         </Styled.Link>
       </NextLink>
+
+      <Styled.Nav>
+        <Styled.NavList role="list">
+          {nav.map(({ href, value }) => (
+            <li key={href}>
+              <NextLink href={href} passHref>
+                <Styled.NavLink>{value}</Styled.NavLink>
+              </NextLink>
+            </li>
+          ))}
+        </Styled.NavList>
+      </Styled.Nav>
     </Styled.Header>
   );
 };
