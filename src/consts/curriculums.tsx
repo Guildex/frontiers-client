@@ -4,6 +4,7 @@ export const CURRICULUMS = {
   INPUT: {
     isPublic: true,
     id: 'input',
+    cost: 8,
     title: '入力要素の実装',
     description: `
       UIパーツとしてポピュラーな入力要素の実装を行います。
@@ -19,6 +20,7 @@ export const CURRICULUMS = {
   REGISTER_FORM_UI: {
     isPublic: true,
     id: 'register-form-ui',
+    cost: 13,
     title: '登録フォームのUI実装',
     description:
       '会員登録やお問い合わせなど、ユーザーの操作によってサービス運営者等に向けて自らの情報を送る為のフォームです。',
@@ -31,6 +33,7 @@ export const CURRICULUMS = {
   REGISTER_FORM_VALIDATION: {
     isPublic: true,
     id: 'register-form-validation',
+    cost: 8,
     title: '登録フォームのバリデーション実装',
     description:
       '登録ボタン押下時に各項目が期待値通りでない場合、赤字で期待値を満たしていないことをユーザーに伝える機能の実装です。\nHTMLInputElementには入力必須を指定するrequiredという属性を付与する方法もありますが、今回はそちらを使用せずに自身で実装したプログラムによって各項目が期待値を満たすかどうかをチェックする処理を実装していきましょう。',
@@ -50,6 +53,7 @@ export const CURRICULUMS = {
   REGISTER_FORM_SUBMIT: {
     isPublic: true,
     id: 'register-form-submit',
+    cost: 8,
     title: '登録フォームの送信処理実装',
     description:
       'バリデーションを終えてアプリケーションが期待する値が送れる準備が整った為、いよいよフォーム機能の山場であるAPIに対してリクエストを送信する処理の実装です。\nリクエスト周りは色々様々な箇所に気を配る必要があります。前回のLessonでも実装したようなバリデーション機能であったり、他にも二重送信を防ぐ為に通信中はボタンを非活性にしたり、入力したデータを変更できないようにしたりと、ユーザーの誤操作を防いだり現在のステータスを逐一分かりやすく表現することでユーザーに待機を促したりする効果があります。\n少々機能としては多めになりますが、自分がエンドユーザーとして利用する側になった時のことをイメージして、より使いやすいUIになるように意識してみましょう。\n※ APIは当アプリケーション内で立てられたサーバーに対してリクエストする為、実際にどこかに入力情報を流すわけではないのでそこはご安心ください',
@@ -72,7 +76,8 @@ export const CURRICULUMS = {
   },
   REGISTER_ERROR_HANDLING: {
     isPublic: false,
-    id: 'register-form-submit',
+    id: 'register-form-error-handling',
+    cost: 5,
     title: '登録フォームのエラーハンドリング',
     description: '',
     requirements: [],
@@ -91,3 +96,5 @@ export const CURRICULUMS = {
 export type CurriculumKeys = keyof typeof CURRICULUMS;
 
 export type Curriculum = typeof CURRICULUMS[CurriculumKeys];
+
+export const curriculumKeys = Object.keys(CURRICULUMS) as CurriculumKeys[];

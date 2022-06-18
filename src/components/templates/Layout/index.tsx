@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import type { ReactNode } from 'react';
 
 import { Footer } from '~/components/organisms/Footer';
@@ -17,12 +18,14 @@ export type LayoutProps = {
  */
 export const Layout = (props: LayoutProps) => {
   const { children } = props;
+  const router = useRouter();
+  const isCurricurum = router.asPath.startsWith('/curriculums');
 
   return (
     <>
       <Header />
       <Styled.Main>
-        <Side />
+        {isCurricurum && <Side />}
         <Styled.Contents>{children}</Styled.Contents>
       </Styled.Main>
       <Footer />
