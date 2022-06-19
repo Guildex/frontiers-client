@@ -1,8 +1,8 @@
 import { Spacer, Table } from '@nextui-org/react';
 import dayjs from 'dayjs';
 
+import { curriculums } from '~/consts/curriculums';
 import type { Curriculum } from '~/consts/curriculums';
-import { CURRICULUMS, curriculumKeys } from '~/consts/curriculums';
 
 import * as Styled from './style';
 
@@ -11,7 +11,7 @@ import 'dayjs/locale/es';
 dayjs.locale('ja');
 
 type Item = {
-  key: Curriculum['id'];
+  key: Curriculum['path'];
   title: Curriculum['title'];
   cost: string;
   expectedDate: string;
@@ -36,8 +36,8 @@ export const Schedule = () => {
       label: '完了予定日',
     },
   ];
-  const items = curriculumKeys.reduce<Item[]>((acc, key, idx) => {
-    const { id, title, cost } = CURRICULUMS[key];
+  const items = curriculums.reduce<Item[]>((acc, current, idx) => {
+    const { path, title, cost } = current;
     const costWithReview = cost * REVIEW_COST;
     const prevCurriculum = acc[idx - 1] as Item | undefined;
     const durationByDay = Math.ceil(cost / PRODUCTION_TIME_BY_DAY);
@@ -46,7 +46,7 @@ export const Schedule = () => {
     return [
       ...acc,
       {
-        key: id,
+        key: path,
         title,
         cost: `${costWithReview}時間`,
         expectedDate: dayjs(date)

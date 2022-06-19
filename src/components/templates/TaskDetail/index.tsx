@@ -1,13 +1,16 @@
 import type { ReactNode } from 'react';
 import { FaInfoCircle } from 'react-icons/fa';
 
-import type { Curriculum } from '~/consts/curriculums';
+import type { Curriculum, Id } from '~/consts/curriculums';
 import { ICON_SIZES } from '~/consts/style';
 
+import { renderExample } from './renderExample';
 import * as Styled from './style';
 
-export type TaskDetailProps = Curriculum & {
+export type TaskDetailProps = {
   children: ReactNode;
+  id: Id;
+  curriculum: Curriculum;
 };
 
 /**
@@ -15,7 +18,9 @@ export type TaskDetailProps = Curriculum & {
  * @param props {@link DetailProps}
  */
 export const TaskDetail = (props: TaskDetailProps) => {
-  const { title, description, requirements, example, children } = props;
+  const { id, curriculum, children } = props;
+  const { title, description, requirements } = curriculum;
+  const example = renderExample(id);
 
   return (
     <>
@@ -41,16 +46,22 @@ export const TaskDetail = (props: TaskDetailProps) => {
         </ul>
       </Styled.RequirementListBox>
 
-      <Styled.Section>
-        <Styled.Title>サンプル</Styled.Title>
-        <Styled.Contents>{example}</Styled.Contents>
-      </Styled.Section>
+      {example && (
+        <>
+          <Styled.Section>
+            <Styled.Title>サンプル</Styled.Title>
+            <Styled.Contents>{example}</Styled.Contents>
+          </Styled.Section>
 
-      <Styled.Section>
-        <Styled.Title>実装</Styled.Title>
-        <Styled.Annotation>サンプルを参考に実装してください</Styled.Annotation>
-        <Styled.Contents>{children}</Styled.Contents>
-      </Styled.Section>
+          <Styled.Section>
+            <Styled.Title>実装</Styled.Title>
+            <Styled.Annotation>
+              サンプルを参考に実装してください
+            </Styled.Annotation>
+            <Styled.Contents>{children}</Styled.Contents>
+          </Styled.Section>
+        </>
+      )}
     </>
   );
 };
