@@ -37,7 +37,6 @@ const Requirements = (props: RequirementsProps) => {
       }}
       defaultSelectedKeys={new Set(completed)}
       allowDuplicateSelectionEvents={false}
-      onChange={console.log}
       onSelectionChange={(key) => {
         const selectedValues =
           key !== 'all'
