@@ -4,6 +4,7 @@ import { COLORS, FONT_SIZES } from '~/consts/style';
 
 export const Header = styled.header`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
@@ -13,6 +14,12 @@ export const Header = styled.header`
   box-shadow: rgb(${COLORS.GRAY300.rgb}) 0 10px 20px -10px;
   z-index: 1000;
 `;
+
+export const LeftContents = styled.div`
+  display: flex;
+`;
+
+export const RightContents = styled.div``;
 
 export const Link = styled.a`
   display: flex;
@@ -36,4 +43,8 @@ export const NavList = styled.ul`
 export const NavLink = styled.a`
   color: ${COLORS.BLUE100.code};
   text-decoration: none;
+`;
+
+export const IconLink = styled.a`
+  color: ${COLORS.GRAY1000.code};
 `;
