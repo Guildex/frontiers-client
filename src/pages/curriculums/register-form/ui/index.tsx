@@ -8,17 +8,18 @@ import { CURRICULUMS } from '~/consts/curriculums';
 
 type Props = {
   id: Id;
+  label: string;
   curriculum: Curriculum;
 };
 
 const RegisterFormUI: NextPage<Props> = (props: Props) => {
-  const { id, curriculum } = props;
+  const { id, label, curriculum } = props;
+  const title = `${label} / ${curriculum.title}`;
 
   return (
     <>
-      <Head title={curriculum.title} description={curriculum.description} />
-
-      <TaskDetail id={id} curriculum={curriculum}>
+      <Head title={title} description={curriculum.description} />
+      <TaskDetail id={id} curriculum={{ ...curriculum, title }}>
         {/* 回答はこちらに実装してください */}
       </TaskDetail>
     </>
@@ -26,12 +27,13 @@ const RegisterFormUI: NextPage<Props> = (props: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = () => {
-  const id = IDS.REGISTER_FORM_UI;
-  const curriculum = CURRICULUMS.REGISTER_FORM.DETAIL.REGISTER_FORM_UI;
+  const { DETAIL, LABEL } = CURRICULUMS.REGISTER_FORM;
+  const curriculum = DETAIL.REGISTER_FORM_UI;
 
   return {
     props: {
-      id,
+      id: IDS.REGISTER_FORM_UI,
+      label: LABEL,
       curriculum,
     },
   };
