@@ -32,38 +32,6 @@ export const Annotation = styled.p`
   margin-bottom: 20px;
 `;
 
-export const RequirementListBox = styled.div`
-  margin-top: 20px;
-  padding: 12px 20px;
-  font-size: ${FONT_SIZES.S}px;
-  line-height: 1.8;
-  color: ${COLORS.GREEN1000.code};
-  border-left: 8px solid ${COLORS.GREEN100.code};
-  background-color: ${COLORS.GREEN50.code};
-  border-radius: 12px;
-
-  ul {
-    margin-bottom: 0;
-  }
-
-  h1 {
-    margin-bottom: 12px;
-    font-size: ${FONT_SIZES.M}px;
-  }
-`;
-
-export const RequirementHeading = styled.h1`
-  display: flex;
-  align-items: center;
-`;
-
-export const RequirementIcon = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: 8px;
-  color: ${COLORS.GREEN100.code};
-`;
-
 export const ExampleBox = styled.div`
   margin-top: 40px;
 `;

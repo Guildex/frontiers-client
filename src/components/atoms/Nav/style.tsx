@@ -44,5 +44,5 @@ export const UnpublishedLink = styled.div`
   ${baseStyle};
 
   color: ${COLORS.GRAY400.code};
-  cursor: pointer;
+  cursor: not-allowed;
 `;

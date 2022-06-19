@@ -1,8 +1,7 @@
+import dynamic from 'next/dynamic';
 import type { ReactNode } from 'react';
-import { FaInfoCircle } from 'react-icons/fa';
 
 import type { Curriculum, Id } from '~/consts/curriculums';
-import { ICON_SIZES } from '~/consts/style';
 
 import { renderExample } from './renderExample';
 import * as Styled from './style';
@@ -13,13 +12,18 @@ export type TaskDetailProps = {
   curriculum: Curriculum;
 };
 
+const DynamicRequirements = dynamic(() => import('./Requirements'), {
+  ssr: false,
+});
+
 /**
  * 課題の詳細を表示するコンポーネント
  * @param props {@link DetailProps}
  */
 export const TaskDetail = (props: TaskDetailProps) => {
   const { id, curriculum, children } = props;
-  const { title, description, requirements } = curriculum;
+  const { path, title, description, requirements } = curriculum;
+
   const example = renderExample(id);
 
   return (
@@ -32,19 +36,10 @@ export const TaskDetail = (props: TaskDetailProps) => {
         ))}
       </Styled.Description>
 
-      <Styled.RequirementListBox>
-        <Styled.RequirementHeading>
-          <Styled.RequirementIcon>
-            <FaInfoCircle size={ICON_SIZES.L} />
-          </Styled.RequirementIcon>
-          仕様
-        </Styled.RequirementHeading>
-        <ul>
-          {requirements.map((requirement) => (
-            <li key={requirement}>{requirement}</li>
-          ))}
-        </ul>
-      </Styled.RequirementListBox>
+      <Styled.Section>
+        <Styled.Title>仕様</Styled.Title>
+        <DynamicRequirements id={id} path={path} requirements={requirements} />
+      </Styled.Section>
 
       {example && (
         <>
