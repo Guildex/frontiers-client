@@ -1,8 +1,9 @@
 import { Spacer, Table } from '@nextui-org/react';
 import dayjs from 'dayjs';
 
-import { curriculums } from '~/consts/curriculums';
-import type { Curriculum } from '~/consts/curriculums';
+import type { Curriculum, Id } from '~/consts/curriculums';
+import { CURRICULUMS, sectionKeys } from '~/consts/curriculums';
+import { FONT_SIZES } from '~/consts/style';
 
 import * as Styled from './style';
 
@@ -17,12 +18,20 @@ type Item = {
   expectedDate: string;
 };
 
+type Schedule = Curriculum & {
+  sectionTitle: string;
+};
+
 const START_DATE = new Date();
 const PRODUCTION_TIME_BY_DAY = 4;
 const REVIEW_COST = 1.2;
 
 export const Schedule = () => {
   const columns = [
+    {
+      key: 'sectionTitle',
+      label: 'セクション区分',
+    },
     {
       key: 'title',
       label: 'カリキュラム内容',
@@ -36,8 +45,22 @@ export const Schedule = () => {
       label: '完了予定日',
     },
   ];
+  const curriculums = sectionKeys.reduce<Schedule[]>((acc, sectionKey) => {
+    const chapterKeys = Object.keys(CURRICULUMS[sectionKey].DETAIL) as Id[];
+    const chapters = chapterKeys.map((chapterKey) => {
+      const curriculum = CURRICULUMS[sectionKey].DETAIL[chapterKey];
+
+      return {
+        ...curriculum,
+        sectionTitle: CURRICULUMS[sectionKey].LABEL,
+        title: curriculum.title,
+      };
+    });
+
+    return [...acc, ...chapters];
+  }, []);
   const items = curriculums.reduce<Item[]>((acc, current, idx) => {
-    const { path, title, cost } = current;
+    const { path, sectionTitle, title, cost } = current;
     const costWithReview = cost * REVIEW_COST;
     const prevCurriculum = acc[idx - 1] as Item | undefined;
     const durationByDay = Math.ceil(cost / PRODUCTION_TIME_BY_DAY);
@@ -47,6 +70,7 @@ export const Schedule = () => {
       ...acc,
       {
         key: path,
+        sectionTitle,
         title,
         cost: `${costWithReview}時間`,
         expectedDate: dayjs(date)
@@ -61,7 +85,12 @@ export const Schedule = () => {
       <Styled.Section>
         <Styled.Heading h1>スケジュール</Styled.Heading>
 
-        <Table aria-label="前提条件">
+        <Table
+          aria-label="前提条件"
+          css={{
+            fontSize: FONT_SIZES.S,
+          }}
+        >
           <Table.Header>
             <Table.Column>開始日</Table.Column>
             <Table.Column>作業時間/日</Table.Column>
@@ -76,7 +105,13 @@ export const Schedule = () => {
 
         <Spacer />
 
-        <Table aria-label="スケジュール" selectionMode="single">
+        <Table
+          aria-label="スケジュール"
+          selectionMode="single"
+          css={{
+            fontSize: FONT_SIZES.S,
+          }}
+        >
           <Table.Header columns={columns}>
             {columns.map(({ key, label }) => (
               <Table.Column key={key}>{label}</Table.Column>
