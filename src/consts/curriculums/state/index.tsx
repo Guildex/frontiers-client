@@ -12,7 +12,7 @@ export const STATE = {
     [IDS.STATE_PROVISION]: {
       isPublic: false,
       path: 'how-to-use',
-      cost: 5,
+      cost: 20,
       title: '概念と使い方',
       description: '',
       requirements: [],

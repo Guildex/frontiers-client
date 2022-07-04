@@ -1,5 +1,6 @@
 import { Spacer, Table } from '@nextui-org/react';
 import dayjs from 'dayjs';
+import { useLocalStorage } from 'react-use';
 
 import type { Curriculum, Id } from '~/consts/curriculums';
 import { CURRICULUMS, sectionKeys } from '~/consts/curriculums';
@@ -13,6 +14,7 @@ dayjs.locale('ja');
 
 type Item = {
   key: Curriculum['path'];
+  isChecked: boolean;
   title: Curriculum['title'];
   cost: string;
   expectedDate: string;
@@ -26,7 +28,8 @@ const START_DATE = new Date();
 const PRODUCTION_TIME_BY_DAY = 4;
 const REVIEW_COST = 1.2;
 
-export const Schedule = () => {
+const Schedule = () => {
+  const [values, setValue] = useLocalStorage<string[]>('schedule');
   const columns = [
     {
       key: 'sectionTitle',
@@ -59,26 +62,33 @@ export const Schedule = () => {
 
     return [...acc, ...chapters];
   }, []);
-  const items = curriculums.reduce<Item[]>((acc, current, idx) => {
+  const items = curriculums.reduce<Item[]>((acc, current) => {
     const { sectionTitle, title, cost } = current;
-    const costWithReview = cost * REVIEW_COST;
-    const prevCurriculum = acc[idx - 1] as Item | undefined;
+    const key = `${sectionTitle}/${title}`;
     const durationByDay = Math.ceil(cost / PRODUCTION_TIME_BY_DAY);
-    const date = prevCurriculum?.expectedDate ?? START_DATE;
+    const isChecked = !!values?.find((selectedKey) => selectedKey === key);
+    const lastCheckedCurriculum = acc
+      .filter(({ isChecked }) => !isChecked)
+      .at(-1);
+    const date = lastCheckedCurriculum?.expectedDate ?? START_DATE;
 
     return [
       ...acc,
       {
-        key: `${sectionTitle}/${title}`,
+        key,
+        isChecked,
         sectionTitle,
         title,
-        cost: `${costWithReview}時間`,
-        expectedDate: dayjs(date)
-          .add(durationByDay, 'day')
-          .format('YYYY/MM/DD'),
+        cost: `${Math.floor(cost * REVIEW_COST * 100) / 100}時間`,
+        expectedDate: isChecked
+          ? '完了'
+          : dayjs(date).add(durationByDay, 'day').format('YYYY/MM/DD'),
       },
     ];
   }, []);
+  const completedSchedule = values?.map(
+    (value) => items.find(({ key }) => key === value)?.key ?? '',
+  );
 
   return (
     <>
@@ -107,9 +117,23 @@ export const Schedule = () => {
 
         <Table
           aria-label="スケジュール"
-          selectionMode="single"
+          selectionMode="multiple"
           css={{
             fontSize: FONT_SIZES.S,
+          }}
+          defaultSelectedKeys={new Set(completedSchedule)}
+          allowDuplicateSelectionEvents={false}
+          onSelectionChange={(key) => {
+            const selectedValues =
+              key !== 'all'
+                ? Array.from(key).map(
+                    (selected) =>
+                      items.find(({ key }) => selected === key)?.key ?? '',
+                  )
+                : // eslint-disable-next-line @typescript-eslint/naming-convention
+                  items.map(({ key }) => key);
+
+            setValue(selectedValues);
           }}
         >
           <Table.Header columns={columns}>
@@ -135,3 +159,5 @@ export const Schedule = () => {
     </>
   );
 };
+
+export default Schedule;

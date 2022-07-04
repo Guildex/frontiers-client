@@ -12,7 +12,7 @@ export const VIRTUAL_ENVIRONMENT = {
     [IDS.VIRTUAL_ENVIRONMENT_ABOUT]: {
       isPublic: false,
       path: 'about',
-      cost: 5,
+      cost: 20,
       title: 'Dockerについて',
       description: '',
       requirements: [],

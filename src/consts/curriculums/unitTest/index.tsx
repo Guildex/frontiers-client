@@ -12,7 +12,7 @@ export const UNIT_TEST = {
     [IDS.UNIT_TEST_PROVISION]: {
       isPublic: false,
       path: 'provision',
-      cost: 5,
+      cost: 30,
       title: 'ライブラリの導入',
       description: '',
       requirements: [],

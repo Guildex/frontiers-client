@@ -1,7 +1,11 @@
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 
 import { Head } from '~/components/atoms/Head';
-import { Schedule } from '~/components/atoms/Schedule';
+
+const Schedule = dynamic(() => import('~/components/atoms/Schedule'), {
+  ssr: false,
+});
 
 const Curriculums: NextPage = () => {
   return (
