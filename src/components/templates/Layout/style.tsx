@@ -11,4 +11,5 @@ export const Contents = styled.div`
   margin: 40px auto;
   padding: 0 40px;
   box-sizing: border-box;
+  overflow: hidden;
 `;

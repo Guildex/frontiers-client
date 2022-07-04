@@ -38,7 +38,7 @@ export const Schedule = () => {
     },
     {
       key: 'cost',
-      label: '対応工数',
+      label: '対応工数（レビュー込み）',
     },
     {
       key: 'expectedDate',
@@ -60,7 +60,7 @@ export const Schedule = () => {
     return [...acc, ...chapters];
   }, []);
   const items = curriculums.reduce<Item[]>((acc, current, idx) => {
-    const { path, sectionTitle, title, cost } = current;
+    const { sectionTitle, title, cost } = current;
     const costWithReview = cost * REVIEW_COST;
     const prevCurriculum = acc[idx - 1] as Item | undefined;
     const durationByDay = Math.ceil(cost / PRODUCTION_TIME_BY_DAY);
@@ -69,7 +69,7 @@ export const Schedule = () => {
     return [
       ...acc,
       {
-        key: path,
+        key: `${sectionTitle}/${title}`,
         sectionTitle,
         title,
         cost: `${costWithReview}時間`,
