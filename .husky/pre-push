@@ -3,4 +3,4 @@
 
 echo "pre-push"
 
-yarn build
+yarn tsc && yarn build
