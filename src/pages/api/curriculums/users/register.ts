@@ -14,8 +14,11 @@ export type PostRegisterUserHandler = ApiHandler<
   }
 >;
 
-const handler: PostRegisterUserHandler = (req, res) => {
+const handler: PostRegisterUserHandler = async (req, res) => {
   const isSuccess = !!(Math.floor(Math.random() * 100) % 2);
+
+  // リクエストタイムアウト時の実装をする際にコメントアウトを外してください
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
 
   res.status(200).json({
     ...(isSuccess
