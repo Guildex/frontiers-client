@@ -1,3 +1,5 @@
+import { ICON_NAMES } from '~/consts/icon';
+
 const ID = 'REGISTER_FORM';
 
 export const IDS = {
@@ -11,6 +13,7 @@ export const IDS = {
 export const REGISTER_FORM = {
   PATH: 'register-form',
   LABEL: '登録フォーム実装',
+  ICON_NAME: ICON_NAMES.REACT,
   DESCRIPTION: 'UI + ロジック実装',
   DETAIL: {
     [IDS.REGISTER_FORM_INPUT]: {

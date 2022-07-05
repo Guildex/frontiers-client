@@ -1,9 +1,12 @@
 import { Spacer, Table } from '@nextui-org/react';
 import dayjs from 'dayjs';
+import type { ReactNode } from 'react';
 import { useLocalStorage } from 'react-use';
 
+import { Icon } from '~/components/atoms/Icon';
 import type { Curriculum, Id } from '~/consts/curriculums';
 import { CURRICULUMS, sectionKeys } from '~/consts/curriculums';
+import type { IconName } from '~/consts/icon';
 import { FONT_SIZES } from '~/consts/style';
 
 import * as Styled from './style';
@@ -15,12 +18,14 @@ dayjs.locale('ja');
 type Item = {
   key: Curriculum['path'];
   isChecked: boolean;
+  sectionTitle: ReactNode;
   title: Curriculum['title'];
   cost: string;
   expectedDate: string;
 };
 
 type Schedule = Curriculum & {
+  iconName: IconName;
   sectionTitle: string;
 };
 
@@ -55,6 +60,7 @@ const Schedule = () => {
 
       return {
         ...curriculum,
+        iconName: CURRICULUMS[sectionKey].ICON_NAME,
         sectionTitle: CURRICULUMS[sectionKey].LABEL,
         title: curriculum.title,
       };
@@ -63,7 +69,7 @@ const Schedule = () => {
     return [...acc, ...chapters];
   }, []);
   const items = curriculums.reduce<Item[]>((acc, current) => {
-    const { sectionTitle, title, cost } = current;
+    const { iconName, sectionTitle, title, cost } = current;
     const key = `${sectionTitle}/${title}`;
     const durationByDay = Math.ceil(cost / PRODUCTION_TIME_BY_DAY);
     const isChecked = !!values?.find((selectedKey) => selectedKey === key);
@@ -77,7 +83,12 @@ const Schedule = () => {
       {
         key,
         isChecked,
-        sectionTitle,
+        sectionTitle: (
+          <Styled.SectionTitleBox>
+            <Icon name={iconName} size={32} />
+            <p>{sectionTitle}</p>
+          </Styled.SectionTitleBox>
+        ),
         title,
         cost: `${Math.floor(cost * REVIEW_COST * 100) / 100}時間`,
         expectedDate: isChecked

@@ -1,3 +1,5 @@
+import type { IconName } from '~/consts/icon';
+
 import { IDS as REGISTER_FORM_IDS, REGISTER_FORM } from './registerForm';
 import { IDS as STATE_IDS } from './state';
 import { STATE } from './state';
@@ -30,6 +32,7 @@ export type Chapter = typeof CURRICULUMS[string]['DETAIL'];
 type Curriculums = {
   [key: string]: {
     PATH: string;
+    ICON_NAME: IconName;
     LABEL: string;
     DESCRIPTION: string;
     DETAIL: {
@@ -40,8 +43,8 @@ type Curriculums = {
 
 export const CURRICULUMS: Curriculums = {
   REGISTER_FORM,
-  STATE,
   UNIT_TEST,
+  STATE,
   VIRTUAL_ENVIRONMENT,
 };
 

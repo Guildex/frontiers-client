@@ -1,3 +1,5 @@
+import { ICON_NAMES } from '~/consts/icon';
+
 const ID = 'STATE';
 
 export const IDS = {
@@ -6,6 +8,7 @@ export const IDS = {
 
 export const STATE = {
   PATH: 'state',
+  ICON_NAME: ICON_NAMES.REACT,
   LABEL: '状態管理',
   DESCRIPTION: 'React Context API',
   DETAIL: {

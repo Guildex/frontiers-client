@@ -8,8 +8,8 @@ export const Main = styled.main`
 export const Contents = styled.div`
   width: 100%;
   max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 40px;
+  margin: 0 auto;
+  padding: 40px;
   box-sizing: border-box;
   overflow: hidden;
 `;

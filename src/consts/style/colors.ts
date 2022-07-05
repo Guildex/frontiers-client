@@ -32,4 +32,10 @@ export const COLORS = {
   REACT: {
     code: '#61dafb',
   },
+  TESTING_LIBRARY: {
+    code: '#e81c27',
+  },
+  DOCKER: {
+    code: '#2496ed',
+  },
 } as const;

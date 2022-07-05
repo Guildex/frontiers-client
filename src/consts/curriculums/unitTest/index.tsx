@@ -1,3 +1,5 @@
+import { ICON_NAMES } from '~/consts/icon';
+
 const ID = 'UNIT_TEST';
 
 export const IDS = {
@@ -6,6 +8,7 @@ export const IDS = {
 
 export const UNIT_TEST = {
   PATH: 'unit-test',
+  ICON_NAME: ICON_NAMES.TEST,
   LABEL: 'ユニットテスト実装',
   DESCRIPTION: 'Jest + React Testing Library',
   DETAIL: {
