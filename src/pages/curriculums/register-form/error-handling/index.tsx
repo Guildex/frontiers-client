@@ -1,7 +1,7 @@
 import type { GetStaticPropsResult, NextPage } from 'next';
 
 import { Head } from '~/components/atoms/Head';
-import { TaskDetail } from '~/components/templates/TaskDetail';
+import { Curriculums } from '~/components/templates/Curriculums';
 import { CURRICULUMS, IDS } from '~/consts/curriculums';
 import type { Curriculum, Id } from '~/consts/curriculums';
 
@@ -18,9 +18,7 @@ const ErrorHandling: NextPage<Props> = (props: Props) => {
   return (
     <>
       <Head title={title} description={curriculum.description} />
-      <TaskDetail id={id} curriculum={{ ...curriculum, title }}>
-        {/* 回答はこちらに実装してください */}
-      </TaskDetail>
+      <Curriculums.RegisterForm.ErrorHandling {...{ id, title, curriculum }} />
     </>
   );
 };
