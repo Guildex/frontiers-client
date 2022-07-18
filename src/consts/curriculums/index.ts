@@ -7,13 +7,18 @@ import { IDS as UNIT_TEST_IDS, UNIT_TEST } from './unitTest';
 import {
   IDS as VIRTUAL_ENVIRONMENT_IDS,
   VIRTUAL_ENVIRONMENT,
-} from './virtual-environment';
+} from './virtualEnvironment';
+import {
+  IDS as WEB_ACCESSIBILITY_IDS,
+  WEB_ACCESSIBILITY,
+} from './webAccessibility';
 
 export const IDS = {
   ...REGISTER_FORM_IDS,
   ...STATE_IDS,
   ...UNIT_TEST_IDS,
   ...VIRTUAL_ENVIRONMENT_IDS,
+  ...WEB_ACCESSIBILITY_IDS,
 } as const;
 
 export type Id = keyof typeof IDS;
@@ -43,6 +48,7 @@ type Curriculums = {
 
 export const CURRICULUMS: Curriculums = {
   REGISTER_FORM,
+  WEB_ACCESSIBILITY,
   UNIT_TEST,
   STATE,
   VIRTUAL_ENVIRONMENT,
