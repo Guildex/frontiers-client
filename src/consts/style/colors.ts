@@ -29,8 +29,14 @@ export const COLORS = {
   GRAY1000: {
     code: '#000',
   },
+  W3C: {
+    code: '#005a9c',
+  },
   REACT: {
     code: '#61dafb',
+  },
+  JEST: {
+    code: '#9c445c',
   },
   TESTING_LIBRARY: {
     code: '#e81c27',

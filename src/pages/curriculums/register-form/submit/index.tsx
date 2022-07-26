@@ -8,13 +8,12 @@ import { CURRICULUMS } from '~/consts/curriculums';
 
 type Props = {
   id: Id;
-  label: string;
+  title: string;
   curriculum: Curriculum;
 };
 
 const RegisterFormSubmit: NextPage<Props> = (props: Props) => {
-  const { id, label, curriculum } = props;
-  const title = `${label} / ${curriculum.title}`;
+  const { id, title, curriculum } = props;
 
   return (
     <>
@@ -31,7 +30,7 @@ export const getStaticProps = (): GetStaticPropsResult<Props> => {
   return {
     props: {
       id: IDS.REGISTER_FORM_SUBMIT,
-      label: LABEL,
+      title: `${LABEL} / ${curriculum.title}`,
       curriculum,
     },
   };
