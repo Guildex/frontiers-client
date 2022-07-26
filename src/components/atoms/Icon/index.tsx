@@ -1,3 +1,4 @@
+import { BsMoonStarsFill, BsSunFill } from 'react-icons/bs';
 import { FaUniversalAccess } from 'react-icons/fa';
 import { GrReactjs, GrDocker } from 'react-icons/gr';
 import { SiJest } from 'react-icons/si';
@@ -23,6 +24,9 @@ export const Icon = (props: IconProps) => {
   };
 
   switch (name) {
+    case ICON_NAMES.DOCKER:
+      return <GrDocker color={COLORS.DOCKER.code} {...iconProps} />;
+
     case ICON_NAMES.WEB_ACCESSIBILITY:
       return <FaUniversalAccess color={COLORS.W3C.code} {...iconProps} />;
 
@@ -32,8 +36,11 @@ export const Icon = (props: IconProps) => {
     case ICON_NAMES.TEST:
       return <SiJest color={COLORS.JEST.code} {...iconProps} />;
 
-    case ICON_NAMES.DOCKER:
-      return <GrDocker color={COLORS.DOCKER.code} {...iconProps} />;
+    case ICON_NAMES.SUN:
+      return <BsSunFill {...iconProps} />;
+
+    case ICON_NAMES.MOON:
+      return <BsMoonStarsFill {...iconProps} />;
 
     default:
       return null;

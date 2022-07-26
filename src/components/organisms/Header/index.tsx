@@ -1,9 +1,12 @@
+import { useTheme, Switch } from '@nextui-org/react';
 import NextLink from 'next/link';
 import { GrReactjs, GrGithub } from 'react-icons/gr';
 
+import { Icon } from '~/components/atoms/Icon';
 import { SITE_NAME } from '~/consts/app';
 import { PATHS } from '~/consts/paths';
 import { COLORS } from '~/consts/style';
+import { useNextTheme } from '~/theme/ThemesProvider';
 
 import * as Styled from './style';
 
@@ -17,6 +20,9 @@ export const Header = () => {
       value: 'カリキュラム',
     },
   ];
+
+  const { setTheme, ...rest } = useNextTheme();
+  const { isDark } = useTheme();
 
   return (
     <Styled.Header>
@@ -42,6 +48,13 @@ export const Header = () => {
       </Styled.LeftContents>
 
       <Styled.RightContents>
+        <Switch
+          checked={isDark}
+          size="lg"
+          onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+          iconOn={<Icon name="SUN" />}
+          iconOff={<Icon name="MOON" />}
+        />
         <Styled.IconLink
           href="https://github.com/Guildex/next-react-workbook"
           target="_blank"

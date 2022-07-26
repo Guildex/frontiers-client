@@ -31,11 +31,13 @@ export const List = styled.ul`
 export const Link = styled.a<{ isActive: boolean }>`
   ${baseStyle};
 
-  color: ${COLORS.GRAY1000.code};
+  color: var(--nextui-colors-text);
   text-decoration: none;
 
   ${({ isActive }) => css`
-    background-color: ${isActive ? COLORS.GRAY200.code : 'transparent'};
+    background-color: ${isActive
+      ? 'var(--nextui-colors-backgroundContrast)'
+      : 'transparent'};
     font-weight: ${isActive ? 'bold' : 'normal'};
   `}
 `;

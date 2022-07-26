@@ -7,6 +7,7 @@ import { Layout } from '~/components/templates/Layout';
 import { SITE_NAME } from '~/consts/app';
 import { GlobalCSS } from '~/theme/GlobalCSS';
 import { ResetCSS } from '~/theme/ResetCSS';
+import { ThemesProvider } from '~/theme/ThemesProvider';
 
 const DynamicGoogleFontLoader = dynamic(() => import('~/theme/GoogleFont'), {
   ssr: false,
@@ -20,9 +21,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ResetCSS />
       <GlobalCSS />
       <DynamicGoogleFontLoader />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemesProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemesProvider>
     </SSRProvider>
   );
 }

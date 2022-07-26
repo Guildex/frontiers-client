@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { COLORS, FONT_SIZES } from '~/consts/style';
+import { FONT_SIZES } from '~/consts/style';
 
 export const CurriculumTitle = styled.h1`
   margin-bottom: 20px;
@@ -42,6 +42,6 @@ export const Contents = styled.div`
   align-items: center;
   min-height: 200px;
   padding: 20px;
-  border: 1px solid ${COLORS.GRAY300.code};
+  border: 1px solid var(--nextui-colors-border);
   border-radius: 12px;
 `;
