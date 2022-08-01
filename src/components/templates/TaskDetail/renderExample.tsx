@@ -12,6 +12,7 @@ const EXAMPLES = {
   [IDS.STATE_PROVISION]: null,
   [IDS.UNIT_TEST_PROVISION]: null,
   [IDS.VIRTUAL_ENVIRONMENT_ABOUT]: null,
+  [IDS.WEB_ACCESSIBILITY_ABOUT]: null,
 } as const;
 
 export const renderExample = (id: Id) => {

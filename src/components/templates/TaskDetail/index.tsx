@@ -7,7 +7,7 @@ import { renderExample } from './renderExample';
 import * as Styled from './style';
 
 export type TaskDetailProps = {
-  children: ReactNode;
+  children?: ReactNode;
   id: Id;
   curriculum: Curriculum;
 };
