@@ -1,8 +1,7 @@
 {
   "functions": {
-    "api/generate-ogp.js": {
-      "includeFiles": "api/**",
-      "excludeFiles": "api/functions/**"
+    "pages/api/**": {
+      "excludeFiles": "{public,.next,.git}/**"
     }
   }
 }
