@@ -1,7 +1,8 @@
 {
   "functions": {
-    "api/*.ts": {
-      "excludeFiles": "**/*.{tsx,ts}"
+    "api/generate-ogp.ts": {
+      "includeFiles": "api/**",
+      "excludeFiles": "api/functions/**"
     }
   }
 }
