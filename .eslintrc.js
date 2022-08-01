@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.json'
   },
-  extends: ['@guildex/eslint-config', 'next/core-web-vitals'],
+  extends: ['@guildex/eslint-config', 'next/core-web-vitals', 'plugin:storybook/recommended']
 };

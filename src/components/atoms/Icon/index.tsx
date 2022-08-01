@@ -6,8 +6,9 @@ import { SiJest } from 'react-icons/si';
 import { ICON_NAMES } from '~/consts/icon';
 import type { IconName } from '~/consts/icon';
 import { COLORS } from '~/consts/style';
+import { IconBaseProps } from 'react-icons';
 
-type IconProps = {
+export type IconProps = {
   name: IconName;
   size?: number;
 };
@@ -18,9 +19,11 @@ type IconProps = {
  * @param props {@see IconProps}
  */
 export const Icon = (props: IconProps) => {
-  const { name, size = 20 } = props;
-  const iconProps = {
+  const { name, size = 32 } = props;
+  const iconProps: IconBaseProps = {
     size,
+    role: 'img',
+    'aria-label': name.toLocaleLowerCase(),
   };
 
   switch (name) {

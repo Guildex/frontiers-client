@@ -10,7 +10,7 @@ const baseStyle = css`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: ${COLORS.GRAY200.code};
+    background-color: var(--nextui-colors-backgroundContrast);
   }
 `;
 

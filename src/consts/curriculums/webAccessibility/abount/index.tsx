@@ -1,5 +1,5 @@
 export const ABOUT = {
-  isPublic: true,
+  isPublic: false,
   path: 'about',
   cost: 5,
   title: 'Webアクセシビリティとは？',
