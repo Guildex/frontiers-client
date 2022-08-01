@@ -17,6 +17,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'mdx'],
+  compress: process.env.NODE_ENV === 'production',
 };
 
 module.exports = composePlugins([withMDX, withBundleAnalyzer], nextConfig);
