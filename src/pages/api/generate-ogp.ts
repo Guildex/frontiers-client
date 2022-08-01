@@ -4,10 +4,7 @@ import { generateOgImage } from '~/utils/generateOgImage';
 
 type Data = Buffer | null;
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   const { title } = req.query;
 
   res.setHeader('Content-Type', 'image/png');

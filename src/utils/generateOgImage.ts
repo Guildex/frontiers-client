@@ -33,10 +33,7 @@ const getH = (sum: number, current: number) => {
  * @see https://zenn.dev/panda_program/articles/generate-og-image
  */
 export const generateOgImage = async (title: string) => {
-  const font = path.resolve(
-    rootDir,
-    'src/lib/canvas/assets/NotoSansJP-Bold.otf',
-  );
+  const font = path.resolve(rootDir, 'src/lib/canvas/assets/NotoSansJP-Bold.otf');
 
   registerFont(font, {
     family: 'NotoSansJP',

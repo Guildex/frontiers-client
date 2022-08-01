@@ -29,33 +29,27 @@ export const Nav = () => {
               {CURRICULUMS[sectionKey].DESCRIPTION}
             </Text>
           }
-          expanded={router.asPath.startsWith(
-            `/curriculums/${CURRICULUMS[sectionKey].PATH}`,
-          )}
+          expanded={router.asPath.startsWith(`/curriculums/${CURRICULUMS[sectionKey].PATH}`)}
         >
           <Styled.List>
-            {(Object.keys(CURRICULUMS[sectionKey].DETAIL) as Id[]).map(
-              (chapterKey, idx) => {
-                const curriculum = CURRICULUMS[sectionKey].DETAIL[chapterKey];
-                const { path, title, isPublic } = curriculum;
-                const href = `/curriculums/${CURRICULUMS[sectionKey].PATH}/${path}`;
-                const text = `${idx + 1}. ${title}`;
+            {(Object.keys(CURRICULUMS[sectionKey].DETAIL) as Id[]).map((chapterKey, idx) => {
+              const curriculum = CURRICULUMS[sectionKey].DETAIL[chapterKey];
+              const { path, title, isPublic } = curriculum;
+              const href = `/curriculums/${CURRICULUMS[sectionKey].PATH}/${path}`;
+              const text = `${idx + 1}. ${title}`;
 
-                return (
-                  <li key={chapterKey}>
-                    {isPublic ? (
-                      <NextLink href={href} passHref>
-                        <Styled.Link isActive={router.asPath === href}>
-                          {text}
-                        </Styled.Link>
-                      </NextLink>
-                    ) : (
-                      <Styled.UnpublishedLink>{text}</Styled.UnpublishedLink>
-                    )}
-                  </li>
-                );
-              },
-            )}
+              return (
+                <li key={chapterKey}>
+                  {isPublic ? (
+                    <NextLink href={href} passHref>
+                      <Styled.Link isActive={router.asPath === href}>{text}</Styled.Link>
+                    </NextLink>
+                  ) : (
+                    <Styled.UnpublishedLink>{text}</Styled.UnpublishedLink>
+                  )}
+                </li>
+              );
+            })}
           </Styled.List>
         </Collapse>
       ))}

@@ -18,6 +18,7 @@ const DynamicRequirements = dynamic(() => import('./Requirements'), {
 
 /**
  * 課題の詳細を表示するコンポーネント
+ *
  * @param props {@link DetailProps}
  */
 export const TaskDetail = (props: TaskDetailProps) => {
@@ -50,9 +51,7 @@ export const TaskDetail = (props: TaskDetailProps) => {
 
           <Styled.Section>
             <Styled.Title>実装</Styled.Title>
-            <Styled.Annotation>
-              サンプルを参考に実装してください
-            </Styled.Annotation>
+            <Styled.Annotation>サンプルを参考に実装してください</Styled.Annotation>
             <Styled.Contents>{children}</Styled.Contents>
           </Styled.Section>
         </>

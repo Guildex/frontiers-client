@@ -73,9 +73,7 @@ const Schedule = () => {
     const key = `${sectionTitle}/${title}`;
     const durationByDay = Math.ceil(cost / PRODUCTION_TIME_BY_DAY);
     const isChecked = !!values?.find((selectedKey) => selectedKey === key);
-    const lastCheckedCurriculum = acc
-      .filter(({ isChecked }) => !isChecked)
-      .at(-1);
+    const lastCheckedCurriculum = acc.filter(({ isChecked }) => !isChecked).at(-1);
     const date = lastCheckedCurriculum?.expectedDate ?? START_DATE;
 
     return [
@@ -91,15 +89,11 @@ const Schedule = () => {
         ),
         title,
         cost: `${Math.floor(cost * REVIEW_COST * 100) / 100}時間`,
-        expectedDate: isChecked
-          ? '完了'
-          : dayjs(date).add(durationByDay, 'day').format('YYYY/MM/DD'),
+        expectedDate: isChecked ? '完了' : dayjs(date).add(durationByDay, 'day').format('YYYY/MM/DD'),
       },
     ];
   }, []);
-  const completedSchedule = values?.map(
-    (value) => items.find(({ key }) => key === value)?.key ?? '',
-  );
+  const completedSchedule = values?.map((value) => items.find(({ key }) => key === value)?.key ?? '');
 
   return (
     <>
@@ -137,10 +131,7 @@ const Schedule = () => {
           onSelectionChange={(key) => {
             const selectedValues =
               key !== 'all'
-                ? Array.from(key).map(
-                    (selected) =>
-                      items.find(({ key }) => selected === key)?.key ?? '',
-                  )
+                ? Array.from(key).map((selected) => items.find(({ key }) => selected === key)?.key ?? '')
                 : // eslint-disable-next-line @typescript-eslint/naming-convention
                   items.map(({ key }) => key);
 

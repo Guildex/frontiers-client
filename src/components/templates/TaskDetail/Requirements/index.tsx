@@ -15,9 +15,7 @@ const Requirements = (props: RequirementsProps) => {
   const ref = useRef<HTMLTableElement>(null);
   const { id, path, requirements } = props;
 
-  const [values, setValue] = useLocalStorage<number[]>(
-    `completed/${id}/${path}`,
-  );
+  const [values, setValue] = useLocalStorage<number[]>(`completed/${id}/${path}`);
   const completed = values?.map((value) => requirements[value]);
 
   useEffect(() => {
@@ -40,9 +38,7 @@ const Requirements = (props: RequirementsProps) => {
       onSelectionChange={(key) => {
         const selectedValues =
           key !== 'all'
-            ? Array.from(key).map((selected) =>
-                requirements.findIndex((key) => selected === key),
-              )
+            ? Array.from(key).map((selected) => requirements.findIndex((key) => selected === key))
             : // eslint-disable-next-line @typescript-eslint/naming-convention
               requirements.map((_, idx) => idx);
 

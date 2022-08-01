@@ -1,3 +1,4 @@
+import type { IconBaseProps } from 'react-icons';
 import { BsMoonStarsFill, BsSunFill } from 'react-icons/bs';
 import { FaUniversalAccess } from 'react-icons/fa';
 import { GrReactjs, GrDocker } from 'react-icons/gr';
@@ -6,7 +7,6 @@ import { SiJest } from 'react-icons/si';
 import { ICON_NAMES } from '~/consts/icon';
 import type { IconName } from '~/consts/icon';
 import { COLORS } from '~/consts/style';
-import { IconBaseProps } from 'react-icons';
 
 export type IconProps = {
   name: IconName;

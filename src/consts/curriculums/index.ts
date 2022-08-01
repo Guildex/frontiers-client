@@ -4,14 +4,8 @@ import { IDS as REGISTER_FORM_IDS, REGISTER_FORM } from './registerForm';
 import { IDS as STATE_IDS } from './state';
 import { STATE } from './state';
 import { IDS as UNIT_TEST_IDS, UNIT_TEST } from './unitTest';
-import {
-  IDS as VIRTUAL_ENVIRONMENT_IDS,
-  VIRTUAL_ENVIRONMENT,
-} from './virtualEnvironment';
-import {
-  IDS as WEB_ACCESSIBILITY_IDS,
-  WEB_ACCESSIBILITY,
-} from './webAccessibility';
+import { IDS as VIRTUAL_ENVIRONMENT_IDS, VIRTUAL_ENVIRONMENT } from './virtualEnvironment';
+import { IDS as WEB_ACCESSIBILITY_IDS, WEB_ACCESSIBILITY } from './webAccessibility';
 
 export const IDS = {
   ...REGISTER_FORM_IDS,

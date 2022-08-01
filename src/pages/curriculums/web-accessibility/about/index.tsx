@@ -18,10 +18,7 @@ const About: NextPage<CurriculumProps> = (props: CurriculumProps) => {
 };
 
 export const getStaticProps = (): GetStaticPropsResult<CurriculumProps> => {
-  const props = getCurriculumProps(
-    IDS.WEB_ACCESSIBILITY_ABOUT,
-    'WEB_ACCESSIBILITY',
-  );
+  const props = getCurriculumProps(IDS.WEB_ACCESSIBILITY_ABOUT, 'WEB_ACCESSIBILITY');
 
   return {
     props,

@@ -10,10 +10,7 @@ const Schedule = dynamic(() => import('~/components/atoms/Schedule'), {
 const Curriculums: NextPage = () => {
   return (
     <>
-      <Head
-        title="カリキュラム一覧"
-        description="当カリキュラムで取り組む内容の一覧です。"
-      />
+      <Head title="カリキュラム一覧" description="当カリキュラムで取り組む内容の一覧です。" />
       <Schedule />
     </>
   );

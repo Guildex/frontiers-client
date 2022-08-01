@@ -1,6 +1,9 @@
 import '@testing-library/jest-dom';
+
 import { render, screen } from '@testing-library/react';
-import { IconName, ICON_NAMES } from '~/consts/icon';
+
+import { ICON_NAMES, type IconName } from '~/consts/icon';
+
 import { Icon } from '.';
 
 describe('Icon', () => {

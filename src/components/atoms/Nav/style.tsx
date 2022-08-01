@@ -35,9 +35,7 @@ export const Link = styled.a<{ isActive: boolean }>`
   text-decoration: none;
 
   ${({ isActive }) => css`
-    background-color: ${isActive
-      ? 'var(--nextui-colors-backgroundContrast)'
-      : 'transparent'};
+    background-color: ${isActive ? 'var(--nextui-colors-backgroundContrast)' : 'transparent'};
     font-weight: ${isActive ? 'bold' : 'normal'};
   `}
 `;

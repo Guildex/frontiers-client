@@ -1,11 +1,6 @@
 import { NextSeo } from 'next-seo';
 
-import {
-  BASE_URL,
-  OPEN_GRAPH_IMAGE_HEIGHT,
-  OPEN_GRAPH_IMAGE_WIDTH,
-  SITE_NAME,
-} from '~/consts/app';
+import { BASE_URL, OPEN_GRAPH_IMAGE_HEIGHT, OPEN_GRAPH_IMAGE_WIDTH, SITE_NAME } from '~/consts/app';
 
 type HeadProps = {
   title: string;
@@ -25,9 +20,7 @@ const MAX_DESCRIPTION_LENGTH = 100;
 export const Head = (props: HeadProps) => {
   const { title, description, openGraph = {} } = props;
   const ogDescription =
-    description.length > MAX_DESCRIPTION_LENGTH
-      ? `${description.slice(0, MAX_DESCRIPTION_LENGTH)}...`
-      : description;
+    description.length > MAX_DESCRIPTION_LENGTH ? `${description.slice(0, MAX_DESCRIPTION_LENGTH)}...` : description;
 
   return (
     <NextSeo
