@@ -14,7 +14,8 @@
     "lint-staged": "lint-staged",
     "vercel-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && next build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "analyze": "ANALYZE=true next build"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
@@ -53,6 +54,7 @@
     "@guildex/eslint-config": "^1.0.8",
     "@mdx-js/loader": "^2.1.2",
     "@mdx-js/react": "^2.1.2",
+    "@next/bundle-analyzer": "^12.2.3",
     "@next/mdx": "^12.2.2",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
