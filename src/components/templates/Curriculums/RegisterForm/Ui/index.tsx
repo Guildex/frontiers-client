@@ -1,6 +1,8 @@
 import { TaskDetail } from '~/components/templates/TaskDetail';
 import type { Curriculum, Id } from '~/consts/curriculums';
 
+import { Answer } from './Answer';
+
 type UiProps = {
   id: Id;
   title: string;
@@ -12,7 +14,7 @@ export const Ui = (props: UiProps) => {
 
   return (
     <TaskDetail id={id} curriculum={{ ...curriculum, title }}>
-      {/* 回答はこちらに実装してください */}
+      <Answer />
     </TaskDetail>
   );
 };
