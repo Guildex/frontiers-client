@@ -1,8 +1,8 @@
-import _GoogleFontLoader from 'react-google-font-loader';
+import FontLoader from 'react-google-font-loader';
 
 const GoogleFontLoader = () => {
   return (
-    <_GoogleFontLoader
+    <FontLoader
       fonts={[
         {
           font: 'Lalezar',
