@@ -4,10 +4,10 @@ import type { ReactNode } from 'react';
 import { useLocalStorage } from 'react-use';
 
 import { Icon } from '~/components/atoms/Icon';
-import type { Curriculum, Id } from '~/consts/curriculums';
-import { CURRICULUMS, sectionKeys } from '~/consts/curriculums';
-import type { IconName } from '~/consts/icon';
-import { FONT_SIZES } from '~/consts/style';
+import type { Curriculum, Id } from '~/const/curriculums';
+import { CURRICULUMS, sectionKeys } from '~/const/curriculums';
+import type { IconName } from '~/const/icon';
+import { FONT_SIZES } from '~/const/style';
 
 import * as Styled from './style';
 

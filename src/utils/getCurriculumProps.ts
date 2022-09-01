@@ -1,5 +1,5 @@
-import type { Id } from '~/consts/curriculums';
-import { CURRICULUMS } from '~/consts/curriculums';
+import type { Id } from '~/const/curriculums';
+import { CURRICULUMS } from '~/const/curriculums';
 
 export type CurriculumProps = ReturnType<typeof getCurriculumProps>;
 

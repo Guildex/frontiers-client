@@ -1,4 +1,4 @@
-import type { IconName } from '~/consts/icon';
+import type { IconName } from '~/const/icon';
 
 import { IDS as REGISTER_FORM_IDS, REGISTER_FORM } from './registerForm';
 import { IDS as STATE_IDS } from './state';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { COLORS, FONT_SIZES } from '~/consts/style';
+import { COLORS, FONT_SIZES } from '~/const/style';
 
 export const Header = styled.header`
   display: flex;

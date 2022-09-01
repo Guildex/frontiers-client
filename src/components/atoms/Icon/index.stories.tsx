@@ -1,6 +1,6 @@
 import type { Story } from '@storybook/react';
 
-import { ICON_NAMES, type IconName } from '~/consts/icon';
+import { ICON_NAMES, type IconName } from '~/const/icon';
 
 import { Icon, type IconProps } from '.';
 

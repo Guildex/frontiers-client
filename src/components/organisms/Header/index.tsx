@@ -3,9 +3,9 @@ import NextLink from 'next/link';
 import { GrReactjs, GrGithub } from 'react-icons/gr';
 
 import { Icon } from '~/components/atoms/Icon';
-import { SITE_NAME } from '~/consts/app';
-import { PATHS } from '~/consts/paths';
-import { COLORS } from '~/consts/style';
+import { SITE_NAME } from '~/const/app';
+import { PATHS } from '~/const/paths';
+import { COLORS } from '~/const/style';
 import { useNextTheme } from '~/theme/ThemesProvider';
 
 import * as Styled from './style';

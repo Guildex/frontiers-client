@@ -2,8 +2,8 @@ import { Collapse, Text } from '@nextui-org/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
-import type { Id } from '~/consts/curriculums';
-import { CURRICULUMS, sectionKeys } from '~/consts/curriculums';
+import type { Id } from '~/const/curriculums';
+import { CURRICULUMS, sectionKeys } from '~/const/curriculums';
 
 import * as Styled from './style';
 

@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import type { ReactNode } from 'react';
 
-import type { Curriculum, Id } from '~/consts/curriculums';
+import type { Curriculum, Id } from '~/const/curriculums';
 
 import { renderExample } from './renderExample';
 import * as Styled from './style';

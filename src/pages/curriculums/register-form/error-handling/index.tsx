@@ -2,8 +2,8 @@ import type { GetStaticPropsResult, NextPage } from 'next';
 
 import { Head } from '~/components/atoms/Head';
 import { Curriculums } from '~/components/templates/Curriculums';
-import { CURRICULUMS, IDS } from '~/consts/curriculums';
-import type { Curriculum, Id } from '~/consts/curriculums';
+import { CURRICULUMS, IDS } from '~/const/curriculums';
+import type { Curriculum, Id } from '~/const/curriculums';
 
 type Props = {
   id: Id;

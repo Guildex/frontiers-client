@@ -4,9 +4,9 @@ import { FaUniversalAccess } from 'react-icons/fa';
 import { GrReactjs, GrDocker } from 'react-icons/gr';
 import { SiJest } from 'react-icons/si';
 
-import { ICON_NAMES } from '~/consts/icon';
-import type { IconName } from '~/consts/icon';
-import { COLORS } from '~/consts/style';
+import { ICON_NAMES } from '~/const/icon';
+import type { IconName } from '~/const/icon';
+import { COLORS } from '~/const/style';
 
 export type IconProps = {
   name: IconName;

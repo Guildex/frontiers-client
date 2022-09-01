@@ -2,7 +2,7 @@ import type { GetStaticPropsResult, NextPage } from 'next';
 
 import { Head } from '~/components/atoms/Head';
 import { Curriculums } from '~/components/templates/Curriculums';
-import { IDS } from '~/consts/curriculums';
+import { IDS } from '~/const/curriculums';
 import type { CurriculumProps } from '~/utils/getCurriculumProps';
 import { getCurriculumProps } from '~/utils/getCurriculumProps';
 

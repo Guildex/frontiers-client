@@ -2,8 +2,8 @@ import { Table } from '@nextui-org/react';
 import { useEffect, useRef } from 'react';
 import { useLocalStorage } from 'react-use';
 
-import type { Curriculum, Id } from '~/consts/curriculums';
-import { FONT_SIZES } from '~/consts/style';
+import type { Curriculum, Id } from '~/const/curriculums';
+import { FONT_SIZES } from '~/const/style';
 
 type RequirementsProps = {
   id: Id;

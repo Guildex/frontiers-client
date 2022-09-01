@@ -1,4 +1,4 @@
-import type { Curriculum, Id } from '~/consts/curriculums';
+import type { Curriculum, Id } from '~/const/curriculums';
 
 import { TaskDetail } from '../../TaskDetail';
 

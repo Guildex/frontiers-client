@@ -1,5 +1,5 @@
 import { TaskDetail } from '~/components/templates/TaskDetail';
-import type { Curriculum, Id } from '~/consts/curriculums';
+import type { Curriculum, Id } from '~/const/curriculums';
 
 import { Answer } from './Answer';
 

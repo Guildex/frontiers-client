@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { COLORS, FONT_SIZES } from '~/consts/style';
+import { COLORS, FONT_SIZES } from '~/const/style';
 
 const baseStyle = css`
   display: block;

@@ -1,4 +1,4 @@
-import { ICON_NAMES } from '~/consts/icon';
+import { ICON_NAMES } from '~/const/icon';
 
 const ID = 'VIRTUAL_ENVIRONMENT';
 

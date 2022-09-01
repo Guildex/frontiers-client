@@ -1,4 +1,4 @@
-import { ICON_NAMES } from '~/consts/icon';
+import { ICON_NAMES } from '~/const/icon';
 
 import { ERROR_HANDLING } from './errorHandling';
 import { INPUT } from './input';

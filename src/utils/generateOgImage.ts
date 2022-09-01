@@ -2,7 +2,7 @@ import { createCanvas, loadImage, registerFont } from 'canvas';
 import fs from 'fs';
 import path from 'path';
 
-import { OPEN_GRAPH_IMAGE_WIDTH, OPEN_GRAPH_IMAGE_HEIGHT } from '~/consts/app';
+import { OPEN_GRAPH_IMAGE_WIDTH, OPEN_GRAPH_IMAGE_HEIGHT } from '~/const/app';
 
 const rootDir = process.cwd();
 

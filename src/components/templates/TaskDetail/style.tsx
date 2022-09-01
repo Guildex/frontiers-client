@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { FONT_SIZES } from '~/consts/style';
+import { FONT_SIZES } from '~/const/style';
 
 export const CurriculumTitle = styled.h1`
   margin-bottom: 20px;

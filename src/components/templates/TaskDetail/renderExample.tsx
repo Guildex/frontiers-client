@@ -1,7 +1,7 @@
 import * as Examples from '@guildex/react-next-curriculum-example';
 
-import { IDS } from '~/consts/curriculums';
-import type { Id } from '~/consts/curriculums';
+import { IDS } from '~/const/curriculums';
+import type { Id } from '~/const/curriculums';
 
 const EXAMPLES = {
   [IDS.REGISTER_FORM_INPUT]: <Examples.RegisterForm.Input />,

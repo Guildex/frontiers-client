@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 
 import { Layout } from '~/components/templates/Layout';
-import { SITE_NAME } from '~/consts/app';
+import { SITE_NAME } from '~/const/app';
 import { GlobalCSS } from '~/theme/GlobalCSS';
 import { ResetCSS } from '~/theme/ResetCSS';
 import { ThemesProvider } from '~/theme/ThemesProvider';
