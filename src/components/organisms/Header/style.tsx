@@ -1,3 +1,4 @@
+import { Button } from '@nextui-org/react';
 import styled from 'styled-components';
 
 import { COLORS, FONT_SIZES } from '~/const/style';
@@ -21,7 +22,8 @@ export const LeftContents = styled.div`
 
 export const RightContents = styled.div`
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 16px;
 `;
 
 export const Link = styled.a`
@@ -56,4 +58,8 @@ export const NavLink = styled.a`
 export const IconLink = styled.a`
   display: block;
   color: var(--nextui-colors-text);
+`;
+
+export const GithubButton = styled(Button)`
+  background-color: ${COLORS.GITHUB.code};
 `;
