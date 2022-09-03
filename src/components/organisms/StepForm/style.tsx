@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 import { COLORS } from '~/const/style';
 
-const STEP_WIDTH = 36;
-const BORDER_WIDTH = 4;
+const STEP_WIDTH = 24;
+const BORDER_WIDTH = 8;
 const GAP = 40;
 
 export const Stepper = styled.ol<{ length: number }>`
@@ -50,11 +50,12 @@ export const Step = styled.li<{ isActive: boolean }>`
 
   ${({ isActive }) => `
     ${StepNumber} {
-      color: ${COLORS[isActive ? 'GRAY100' : 'GRAY1000'].code};
-      background-color: ${COLORS[isActive ? 'GREEN300' : 'GRAY200'].code};
+      background-color: ${COLORS[isActive ? 'GRAY100' : 'GRAY200'].code};
+      border: 6px solid ${COLORS[isActive ? 'GREEN300' : 'GRAY200'].code};
     }
 
     ${StepLabel} {
+      color: ${COLORS[isActive ? 'GRAY1000' : 'GRAY500'].code};
       font-weight: ${isActive ? 'bold' : 'normal'};
     }
   `}

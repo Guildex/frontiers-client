@@ -34,7 +34,7 @@ export const Header = () => {
           </Styled.Link>
         </NextLink>
 
-        <Styled.Nav>
+        <>
           <Styled.NavList role="list">
             {nav.map(({ href, value }) => (
               <li key={href} role="listitem">
@@ -44,7 +44,7 @@ export const Header = () => {
               </li>
             ))}
           </Styled.NavList>
-        </Styled.Nav>
+        </>
       </Styled.LeftContents>
 
       <Styled.RightContents>

@@ -1,4 +1,4 @@
-export const SITE_NAME = 'Next React Workbook';
+export const SITE_NAME = 'Frontiers';
 export const DOMAIN = 'next-react-workbook-henna.vercel.app';
 export const BASE_URL = `https://${DOMAIN}/`;
 

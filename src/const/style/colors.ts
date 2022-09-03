@@ -8,6 +8,9 @@ export const COLORS = {
   GREEN100: {
     code: '#b7dc9e',
   },
+  GREEN300: {
+    code: '#6dd482',
+  },
   GREEN1000: {
     code: '#2c5611',
   },
@@ -26,6 +29,9 @@ export const COLORS = {
   GRAY400: {
     code: '#cdcdcd',
   },
+  GRAY500: {
+    code: '#909090',
+  },
   GRAY1000: {
     code: '#000',
   },
@@ -43,5 +49,8 @@ export const COLORS = {
   },
   DOCKER: {
     code: '#2496ed',
+  },
+  GITHUB: {
+    code: '#24292f',
   },
 } as const;

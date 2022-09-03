@@ -5,7 +5,6 @@ import { Footer } from '~/components/organisms/Footer';
 import * as Styled from './style';
 
 type NoHeaderLayoutProps = {
-  idCenter: boolean;
   children: ReactNode;
 };
 

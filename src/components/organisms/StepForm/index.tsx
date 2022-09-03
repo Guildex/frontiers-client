@@ -19,7 +19,7 @@ export const StepForm = (props: StepFormProps) => {
 
           return (
             <Styled.Step key={label} isActive={isActive}>
-              <Styled.StepNumber>{idx + 1}</Styled.StepNumber>
+              <Styled.StepNumber />
               <Styled.StepLabel>{label}</Styled.StepLabel>
             </Styled.Step>
           );

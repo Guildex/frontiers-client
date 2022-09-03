@@ -5,6 +5,7 @@ import { BASE_URL, OPEN_GRAPH_IMAGE_HEIGHT, OPEN_GRAPH_IMAGE_WIDTH, SITE_NAME } 
 type HeadProps = {
   title: string;
   description: string;
+  hasNoIndex: boolean;
   openGraph?: {
     type: string;
   };
@@ -18,7 +19,7 @@ const MAX_DESCRIPTION_LENGTH = 100;
  * @param props {@link HeadProps}
  */
 export const Head = (props: HeadProps) => {
-  const { title, description, openGraph = {} } = props;
+  const { title, description, hasNoIndex, openGraph = {} } = props;
   const ogDescription =
     description.length > MAX_DESCRIPTION_LENGTH ? `${description.slice(0, MAX_DESCRIPTION_LENGTH)}...` : description;
 
@@ -26,6 +27,7 @@ export const Head = (props: HeadProps) => {
     <NextSeo
       title={title}
       description={description}
+      noindex={hasNoIndex}
       openGraph={{
         ...openGraph,
         title,
