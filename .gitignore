@@ -23,7 +23,7 @@
 *.log
 
 # local env files
-.env*.local
+.env.development
 
 # vercel
 .vercel
