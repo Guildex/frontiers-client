@@ -1,13 +1,14 @@
-import { useTheme, Switch, Modal, Text, Button } from '@nextui-org/react';
+import { useTheme, Switch, Button } from '@nextui-org/react';
 import NextLink from 'next/link';
 import { useState } from 'react';
-import { GrGithub } from 'react-icons/gr';
 
 import { Icon } from '~/components/atoms/Icon';
 import { SITE_NAME } from '~/const/app';
 import { PATHS } from '~/const/paths';
 import { useNextTheme } from '~/theme/ThemesProvider';
 
+import { LoginModal } from './LoginModal';
+import { RegisterSuccessModal } from './RegisterSuccessModal';
 import * as Styled from './style';
 
 /**
@@ -34,17 +35,15 @@ export const Header = () => {
           </Styled.Link>
         </NextLink>
 
-        <>
-          <Styled.NavList role="list">
-            {nav.map(({ href, value }) => (
-              <li key={href} role="listitem">
-                <NextLink href={href} passHref>
-                  <Styled.NavLink>{value}</Styled.NavLink>
-                </NextLink>
-              </li>
-            ))}
-          </Styled.NavList>
-        </>
+        <Styled.NavList role="list">
+          {nav.map(({ href, value }) => (
+            <li key={href} role="listitem">
+              <NextLink href={href} passHref>
+                <Styled.NavLink>{value}</Styled.NavLink>
+              </NextLink>
+            </li>
+          ))}
+        </Styled.NavList>
       </Styled.LeftContents>
 
       <Styled.RightContents>
@@ -64,38 +63,10 @@ export const Header = () => {
         >
           ログイン
         </Button>
-        <Modal
-          closeButton
-          aria-labelledby="modal-title"
-          open={isLoginModalVisible}
-          onClose={() => {
-            setIsLoginModalVisible(false);
-          }}
-        >
-          <Modal.Header>
-            <Text id="modal-title" size={20}>
-              ログイン
-            </Text>
-          </Modal.Header>
-          <Modal.Body>
-            <Text>{SITE_NAME}にアクセスして頂きありがとうございます。</Text>
-
-            <Styled.GithubButton
-              icon={<GrGithub size={24} />}
-              size="md"
-              auto
-              onClick={() => {
-                // TODO: GitHub
-              }}
-            >
-              GitHubでログイン
-            </Styled.GithubButton>
-          </Modal.Body>
-          <Modal.Footer justify="flex-start">
-            <Text>hoge</Text>
-          </Modal.Footer>
-        </Modal>
       </Styled.RightContents>
+
+      <LoginModal isLoginModalVisible={isLoginModalVisible} setIsLoginModalVisible={setIsLoginModalVisible} />
+      <RegisterSuccessModal />
     </Styled.Header>
   );
 };
