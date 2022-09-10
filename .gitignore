@@ -30,3 +30,6 @@
 
 # typescript
 *.tsbuildinfo
+
+# GraphQL
+src/@generated
