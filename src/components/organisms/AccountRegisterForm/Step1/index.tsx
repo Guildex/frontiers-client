@@ -1,19 +1,16 @@
 import { Avatar, Button, Grid, Input, Row, Spacer } from '@nextui-org/react';
-import type { Dispatch, SetStateAction } from 'react';
+
+import { useRegistrationStep } from '~/contexts';
 
 import { useUserTmp } from '../useUserTmp';
 
-type Step1Props = {
-  setCurrentStep: Dispatch<SetStateAction<number>>;
-};
-
-export const Step1 = (props: Step1Props) => {
-  const { setCurrentStep } = props;
+export const Step1 = () => {
+  const [, setRegistrationStep] = useRegistrationStep();
   const { data } = useUserTmp();
 
   return (
     <>
-      <Grid.Container justify="space-around" gap={2}>
+      <Grid.Container justify="space-around">
         <Grid>
           <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="xl" color="primary" bordered />
         </Grid>
@@ -46,7 +43,10 @@ export const Step1 = (props: Step1Props) => {
         <Button
           auto
           onClick={() => {
-            setCurrentStep((prev) => prev + 1);
+            setRegistrationStep((prev) => ({
+              ...prev,
+              currentStep: prev.currentStep + 1,
+            }));
           }}
         >
           次へ

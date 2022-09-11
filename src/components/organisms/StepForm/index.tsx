@@ -1,32 +1,24 @@
-import type { ReactNode } from 'react';
+import { useRegistrationStep } from '~/contexts';
 
 import * as Styled from './style';
 
-type StepFormProps = {
-  currentStep: number;
-  children: ReactNode;
-  steps: string[];
-};
-
-export const StepForm = (props: StepFormProps) => {
-  const { currentStep, children, steps } = props;
+export const StepForm = () => {
+  const steps = ['アカウント情報', 'ロールの選択', '完了'];
+  const [{ currentStep }] = useRegistrationStep();
 
   return (
-    <div>
-      <Styled.Stepper length={steps.length}>
-        {steps.map((label, idx) => {
-          const isActive = idx + 1 <= currentStep;
+    <Styled.Stepper length={steps.length}>
+      {steps.map((label, idx) => {
+        const isActive = idx + 1 <= currentStep;
 
-          return (
-            <Styled.Step key={label} isActive={isActive}>
-              <Styled.StepNumber />
-              <Styled.StepLabel>{label}</Styled.StepLabel>
-            </Styled.Step>
-          );
-        })}
-      </Styled.Stepper>
-
-      <Styled.Contents>{children}</Styled.Contents>
-    </div>
+        return (
+          <Styled.Step key={label} isActive={isActive} style={{ zIndex: steps.length - (idx + 1) }}>
+            {idx !== 0 && <Styled.Progress striped size="sm" color="success" value={isActive ? 100 : 0} />}
+            <Styled.StepDot />
+            <Styled.StepLabel>{label}</Styled.StepLabel>
+          </Styled.Step>
+        );
+      })}
+    </Styled.Stepper>
   );
 };
