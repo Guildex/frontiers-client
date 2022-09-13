@@ -81,7 +81,7 @@ export const Step2 = () => {
 
       <Spacer y={2} />
 
-      <Row justify="space-between">
+      <Row justify="space-around">
         <Button
           auto
           bordered
