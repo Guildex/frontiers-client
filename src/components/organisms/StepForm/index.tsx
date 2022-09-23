@@ -3,8 +3,7 @@ import { useRegistrationStep } from '~/contexts';
 import * as Styled from './style';
 
 export const StepForm = () => {
-  const steps = ['アカウント情報', 'ロールの選択', '完了'];
-  const [{ currentStep }] = useRegistrationStep();
+  const [{ steps, currentStep }] = useRegistrationStep();
 
   return (
     <Styled.Stepper length={steps.length}>
