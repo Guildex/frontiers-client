@@ -14,6 +14,6 @@ export type PrivacyPolicyHref = {
 
 export type Hrefs = HomeHref | TermHref | PrivacyPolicyHref;
 export type Queries = Partial<{
-  authenticated: 'login' | 'register';
+  authenticated: 'login' | 'pre-register' | 'pre-registered';
 }>;
 export type Href = Paths | Hrefs;
