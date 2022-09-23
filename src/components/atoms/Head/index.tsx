@@ -5,7 +5,7 @@ import { BASE_URL, OPEN_GRAPH_IMAGE_HEIGHT, OPEN_GRAPH_IMAGE_WIDTH, SITE_NAME } 
 type HeadProps = {
   title: string;
   description: string;
-  hasNoIndex: boolean;
+  hasNoIndex?: boolean;
   openGraph?: {
     type: string;
   };
