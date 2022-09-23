@@ -1,6 +1,7 @@
 query GetUserTmp($token: String!) {
   userTmp(token: $token) {
     username
+    avatar
     email
   }
 }
