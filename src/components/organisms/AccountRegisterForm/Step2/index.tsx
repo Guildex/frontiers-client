@@ -1,4 +1,4 @@
-import { Button, Row, Spacer, Text, Image, Container } from '@nextui-org/react';
+import { Button, Spacer, Text, Image, Container } from '@nextui-org/react';
 
 import { UserRole } from '~/@generated/graphql';
 import { useRegistrationStep } from '~/contexts';
@@ -10,9 +10,9 @@ export const Step2 = () => {
 
   return (
     <>
-      <Text>あなたのロールを選択してください</Text>
+      <Text h4>あなたのロールを選択してください</Text>
 
-      <Spacer y={1} />
+      <Spacer y={2} />
 
       <Container display="flex" justify="center">
         <Button.Group color="gradient" ghost>
@@ -78,35 +78,6 @@ export const Step2 = () => {
           </Text>
         </>
       )}
-
-      <Spacer y={2} />
-
-      <Row justify="space-around">
-        <Button
-          auto
-          bordered
-          onClick={() => {
-            setRegistrationStep((prev) => ({
-              ...prev,
-              currentStep: prev.currentStep - 1,
-            }));
-          }}
-        >
-          戻る
-        </Button>
-
-        <Button
-          auto
-          onClick={() => {
-            setRegistrationStep((prev) => ({
-              ...prev,
-              currentStep: prev.currentStep + 1,
-            }));
-          }}
-        >
-          次へ
-        </Button>
-      </Row>
     </>
   );
 };

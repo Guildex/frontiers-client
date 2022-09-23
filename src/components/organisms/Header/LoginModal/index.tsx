@@ -1,7 +1,6 @@
-import { Container, Modal, Text } from '@nextui-org/react';
+import { Container, Loading, Modal, Text } from '@nextui-org/react';
 import type { Dispatch, SetStateAction } from 'react';
 import { useState } from 'react';
-import { FaCircleNotch } from 'react-icons/fa';
 import { GrGithub } from 'react-icons/gr';
 
 import { Link } from '~/components/atoms/Link';
@@ -38,15 +37,7 @@ export const LoginModal = (props: LoginModalProps) => {
 
         <Container display="flex" justify="center">
           <Styled.GithubButton
-            icon={
-              isLoading ? (
-                <Styled.LoadingIconBox>
-                  <FaCircleNotch className="fa-spin" />
-                </Styled.LoadingIconBox>
-              ) : (
-                <GrGithub size={24} />
-              )
-            }
+            icon={isLoading ? <Loading size="xs" color="white" /> : <GrGithub size={24} />}
             size="lg"
             auto
             onClick={async () => {

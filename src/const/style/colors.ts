@@ -19,7 +19,7 @@ export const COLORS = {
     rgb: '255, 255, 255',
   },
   GRAY200: {
-    code: '#f4f4f4',
+    code: '#f1f3f5',
     rgb: '244, 244, 244',
   },
   GRAY300: {
